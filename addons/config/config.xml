@@ -1,4 +1,0 @@
-<Ui>
-	<Script file="config.lua"/>
-  <Include file="..\..\..\BagBrother\addons\config\config.xml"/>
-</Ui>
