@@ -76,15 +76,15 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				self.Icon:SetSize(self.normal or 24, self.normal or 24)
+				self.Icon:SetSize(self.size or 24, self.size or 24)
 				self.Mask:SetSize(self.mask or 22, self.mask or 22)
 				self.Icon:SetTexture(self.icon)
 			</OnLoad>
 			<OnMouseDown>
-				self.Icon:SetSize((self.normal or 24) - 2, (self.normal or 24) - 2)
+				self.Icon:SetSize((self.size or 24) - 2, (self.size or 24) - 2)
 			</OnMouseDown>
 			<OnMouseUp>
-				self.Icon:SetSize(self.normal or 24, self.normal or 24)
+				self.Icon:SetSize(self.size or 24, self.size or 24)
 			</OnMouseUp>
 		</Scripts>
 	</Button>
@@ -104,10 +104,23 @@
 	</Button>
 
 	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
-		<Size x="70" y="70"/>
-		<KeyValues>
+		<!-- values are different between retail/classic and portrait sizes, need to solve -->
+		<!-- <Size x="70" y="70"/> -->
+		<!-- <Size x="46" y="46"/> small -->
+		<Size x="46" y="46"/>
+
+		<!--<KeyValues> retail large
+			<KeyValue key="size" value="62" type="number"/>
 			<KeyValue key="mask" value="52" type="number"/>
-			<KeyValue key="normal" value="62" type="number"/>
+		</KeyValues>-->
+		<!-- <KeyValues> classic large
+			<KeyValue key="size" value="56" type="number"/>
+			<KeyValue key="mask" value="56" type="number"/>
+		</KeyValues> -->
+
+		<KeyValues> classic small
+			<KeyValue key="size" value="36" type="number"/>
+			<KeyValue key="mask" value="36" type="number"/>
 		</KeyValues>
 	</Button>
 
@@ -195,5 +208,12 @@
 				</Anchors>
 			</Button>
 		</Frames>
+	</Frame>
+
+	<Frame name="BagnoniumBigSkinTemplate" inherits="PortraitFrameFlatTemplate" virtual="true"/>
+	<Frame name="BagnoniumSkinTemplate" inherits="PortraitFrameFlatTemplate" virtual="true">
+		<KeyValues>
+			<KeyValue key="layoutType" value="HeldBagLayout" type="string"/>
+		</KeyValues>
 	</Frame>
 </Ui>
