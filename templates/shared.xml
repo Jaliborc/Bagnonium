@@ -4,7 +4,7 @@
 -->
 
 <Ui>
-	<!-- Components -->
+	<!-- Frame -->
 	<Frame name="BagnoniumFrameTemplate" virtual="true" movable="true" toplevel="true" enableMouse="true" resizable="true" clampedToScreen="true">
 		<Frames>
 			<Button parentKey="Title" inherits="PanelDragBarTemplate">
@@ -49,6 +49,7 @@
 		</Layers>
 	</CheckButton>
 
+	<!-- Buttons -->
 	<Button name="BagnoniumRoundTemplate" registerForClicks="anyUp" virtual="true">
 		<Size x="28" y="28"/>
 		<HighlightTexture file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" alphaMode="ADD">
@@ -92,12 +93,15 @@
 				</Texture>
 			</Layer>
 		</Layers>
+		<KeyValues>
+			<KeyValue key="off" value="5" type="number"/>
+		</KeyValues>
 	</Button>
 
+	<Button name="BagnoniumLogToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true"/>
 	<Button name="BagnoniumBagToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="icon" value="Interface/Buttons/Button-Backpack-Up" type="string"/>
-			<KeyValue key="off" value="5" type="number"/>
 		</KeyValues>
 	</Button>
 

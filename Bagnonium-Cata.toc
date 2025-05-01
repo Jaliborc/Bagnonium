@@ -12,5 +12,5 @@
 
 templates\shared.xml
 templates\classic.xml
-templates\skins.xml
+templates\finish.xml
 src\main.xml

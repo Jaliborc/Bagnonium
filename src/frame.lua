@@ -97,7 +97,9 @@ function Frame:Layout()
 	local x = 0
 	for i, button in ipairs_reverse(self:GetExtraButtons()) do
 		x = x + button:GetWidth() + (button.off or 0)
+		
 		button:SetPoint('LEFT', self.SortButton, x,0)
+		button:Show()
 	end
 
 	self.ItemGroup:SetPoint('TOPLEFT', 12, self:AreBagsShown() and -102 or -66)
