@@ -1,0 +1,10 @@
+<Ui>
+	<!-- All Rights Reserved -->
+	<Include file="templates.xml"/>
+	<Include file="..\..\BagBrother\core\core.xml"/>
+	<Include file="..\..\BagBrother\frames\inventory\inventory.xml"/>
+
+	<Script file="frame.lua"/>
+	<Script file="itemGroup.lua"/>
+	<Script file="skins.lua"/>
+</Ui>

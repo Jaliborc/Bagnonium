@@ -1,0 +1,201 @@
+<!--
+	Templates used for the Bagnonium frame design.
+	All Rights Reserved
+-->
+
+<Ui>
+	<!-- Components -->
+	<Frame name="BagnoniumFrameTemplate" virtual="true" movable="true" toplevel="true" enableMouse="true" resizable="true" clampedToScreen="true">
+		<Frames>
+			<Button parentKey="Title" inherits="PanelDragBarTemplate">
+				<Size x="14" y="14"/>
+				<Anchors>
+					<Anchor point="TOP" x="0" y="-4"/>
+				</Anchors>
+				<NormalFont style="GameFontNormalCenter"/>
+			</Button>
+
+			<Button parentKey="ResizeButton" inherits="PanelResizeButtonTemplate">
+				<Size x="20" y="20"/>
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-5" y="2"/>
+				</Anchors>
+				<NormalTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Up">
+					<Color r="1" g="0.82" b="0" a="0.8"/>
+				</NormalTexture>
+			</Button>
+
+			<EditBox parentKey="SearchBox" autoFocus="false" inherits="SearchBoxTemplate">
+				<Size x="20" y="20"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" x="70" y="-32"/>
+					<Anchor point="TOPRIGHT" x="-80" y="-32"/>
+				</Anchors>
+				<Scripts>
+					<OnEnterPressed>
+						self:ClearFocus()
+					</OnEnterPressed>
+				</Scripts>
+			</EditBox>
+
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonNoScripts"/>
+		</Frames>
+	</Frame>
+
+	<CheckButton name="BagnoniumTabTemplate" inherits="SimplePopupButtonTemplate" registerForClicks="anyUp" virtual="true">
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD"/>
+		<NormalTexture parentKey="Icon"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Border" file="Interface\SpellBook\SpellBook-SkillLineTab">
+					<Size x="72" y="72"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="3" y="12"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</CheckButton>
+
+	<Button name="BagnoniumRoundButtonTemplate" virtual="true">
+		<Size x="32" y="32"/>
+		<HitRectInsets left="4" right="0" top="4" bottom="0"/>
+		<HighlightTexture file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" alphaMode="ADD"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Icon">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+				<MaskTexture parentKey="Mask" file="Interface\CharacterFrame\TempPortraitAlphaMask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="Border" file="Interface\Minimap\MiniMap-TrackingBorder">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="22" y="-22"/>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				local width, height = self:GetSize()
+				self.Border:SetShown(not self.noBorder)
+				self.Mask:SetSize(width * 0.625, height * 0.625)
+				self.Icon:SetSize(width * 0.75, height * 0.75)
+				self.Icon:SetTexture(self.icon)
+			</OnLoad>
+			<OnMouseDown>
+				local width, height = self:GetSize()
+				self.Icon:SetSize(width * 0.65625, height * 0.65625)
+			</OnMouseDown>
+			<OnMouseUp>
+				local width, height = self:GetSize()
+				self.Icon:SetSize(width * 0.75, height * 0.75)
+			</OnMouseUp>
+		</Scripts>
+	</Button>
+
+	<Button name="BagnoniumBagToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
+		<KeyValues>
+			<KeyValue key="icon" value="Interface/Buttons/Button-Backpack-Up" type="string"/>
+		</KeyValues>
+	</Button>
+
+	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
+		<Size x="90" y="90"/>
+		<KeyValues>
+			<KeyValue key="noBorder" value="true" type="boolean"/>
+		</KeyValues>
+	</Button>
+
+	<CheckButton name="BagnoniumSortButtonTemplate" virtual="true">
+		<Size x="28" y="26"/>
+		<NormalTexture atlas="bags-button-autosort-up"/>
+		<PushedTexture atlas="bags-button-autosort-down"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD">
+			<Size x="24" y="23"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</HighlightTexture>
+		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
+			<Size x="24" y="23"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</CheckedTexture>
+	</CheckButton>
+
+	<!-- Skins -->
+	<Frame name="BagnoniumNineSlice" inherits="NineSliceCodeTemplate" setAllPoints="true" virtual="true">
+		<Scripts>
+			<OnLoad>
+				-- using nineslice because in-texture slicing has some issues
+				NineSliceUtil.ApplyLayout(self, NineSliceLayouts['ChatBubble'])
+
+				local w,h, e = unpack(TableUtil.Transform({strsplit(',', self.size)}, tonumber))
+				local x, y = w-e, h-e
+				local slices = {
+					TopLeftCorner = { 0,e, 0,e },
+					TopRightCorner = { x,w, 0,e },
+					BottomLeftCorner = { 0,e, y,h },
+					BottomRightCorner = { x,w, y,h },
+					TopEdge = { e,x, 0,e },
+					BottomEdge = { e,x, y,h },
+					LeftEdge = { 0,e, e,y },
+					RightEdge = { x,w, e,y },
+					Center = { e,x, e,y }
+				}
+
+				for key,coords in pairs(slices) do
+					local left, right, top, bottom = unpack(coords)
+					local t = self[key]
+					t:SetTexture(self.file)
+					t:SetTexCoord(left/w,right/w, top/h,bottom/h)
+					t:SetSize(right-left, bottom-top)
+				end
+
+				self.Center:SetHorizTile(self.tile)
+				self.Center:SetVertTile(self.tile)
+			</OnLoad>
+		</Scripts>
+	</Frame>
+
+	<Frame name="CombuctorBoxTemplate" inherits="MagicButtonTemplate" virtual="true">
+		<Size x="156" y="22"/>
+		<Frames>
+			<Frame parentKey="Bg" inherits="BagnoniumNineSlice">
+				<KeyValues>
+					<KeyValue key="file" value="Interface/Addons/Bagnonium/art/classic-money" type="string"/>
+					<KeyValue key="size" value="256,32,7" type="string"/>
+				</KeyValues>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	<Frame name="CombuctorSkinTemplate" inherits="ButtonFrameTemplate" virtual="true">
+		<Frames>
+			<Button parentKey="RightBox" inherits="CombuctorBoxTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT"/>
+				</Anchors>
+			</Button>
+			<Button parentKey="LeftBox" inherits="CombuctorBoxTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT"/>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>
