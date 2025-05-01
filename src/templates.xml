@@ -58,64 +58,62 @@
 		</Layers>
 	</CheckButton>
 
-	<Button name="BagnoniumRoundButtonTemplate" virtual="true">
-		<Size x="32" y="32"/>
-		<HitRectInsets left="4" right="0" top="4" bottom="0"/>
-		<HighlightTexture file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" alphaMode="ADD"/>
+	<Button name="BagnoniumRoundTemplate" virtual="true">
+		<Size x="28" y="28"/>
+		<HighlightTexture file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" alphaMode="ADD">
+			<TexCoords left="0.0625" right="0.9375" top="0.0625" bottom="0.9375"/>
+		</HighlightTexture>
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture parentKey="Icon">
-					<Anchors>
-						<Anchor point="CENTER"/>
-					</Anchors>
+					<Anchors><Anchor point="CENTER"/></Anchors>
 				</Texture>
 				<MaskTexture parentKey="Mask" file="Interface\CharacterFrame\TempPortraitAlphaMask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
-					<Anchors>
-						<Anchor point="CENTER"/>
-					</Anchors>
-					<MaskedTextures>
-						<MaskedTexture childKey="Icon"/>
-					</MaskedTextures>
+					<Anchors><Anchor point="CENTER"/></Anchors>
+					<MaskedTextures><MaskedTexture childKey="Icon"/></MaskedTextures>
 				</MaskTexture>
 			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				self.Icon:SetSize(self.normal or 24, self.normal or 24)
+				self.Mask:SetSize(self.mask or 22, self.mask or 22)
+				self.Icon:SetTexture(self.icon)
+			</OnLoad>
+			<OnMouseDown>
+				self.Icon:SetSize((self.normal or 24) - 2, (self.normal or 24) - 2)
+			</OnMouseDown>
+			<OnMouseUp>
+				self.Icon:SetSize(self.normal or 24, self.normal or 24)
+			</OnMouseUp>
+		</Scripts>
+	</Button>
+
+	<Button name="BagnoniumRoundButtonTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
+		<Layers>
 			<Layer level="BORDER">
 				<Texture parentKey="Border" file="Interface\Minimap\MiniMap-TrackingBorder">
 					<Anchors>
 						<Anchor point="BOTTOMRIGHT" x="22" y="-22"/>
 						<Anchor point="TOPLEFT"/>
 					</Anchors>
+					<TexCoords left="0.037037" right="0.962963" top="0.037037" bottom="0.962963"/>
 				</Texture>
 			</Layer>
 		</Layers>
-		<Scripts>
-			<OnLoad>
-				local width, height = self:GetSize()
-				self.Border:SetShown(not self.noBorder)
-				self.Mask:SetSize(width * 0.625, height * 0.625)
-				self.Icon:SetSize(width * 0.75, height * 0.75)
-				self.Icon:SetTexture(self.icon)
-			</OnLoad>
-			<OnMouseDown>
-				local width, height = self:GetSize()
-				self.Icon:SetSize(width * 0.65625, height * 0.65625)
-			</OnMouseDown>
-			<OnMouseUp>
-				local width, height = self:GetSize()
-				self.Icon:SetSize(width * 0.75, height * 0.75)
-			</OnMouseUp>
-		</Scripts>
+	</Button>
+
+	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
+		<Size x="70" y="70"/>
+		<KeyValues>
+			<KeyValue key="mask" value="52" type="number"/>
+			<KeyValue key="normal" value="62" type="number"/>
+		</KeyValues>
 	</Button>
 
 	<Button name="BagnoniumBagToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="icon" value="Interface/Buttons/Button-Backpack-Up" type="string"/>
-		</KeyValues>
-	</Button>
-
-	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
-		<Size x="90" y="90"/>
-		<KeyValues>
-			<KeyValue key="noBorder" value="true" type="boolean"/>
 		</KeyValues>
 	</Button>
 

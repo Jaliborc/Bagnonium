@@ -9,8 +9,11 @@ Addon.Skins.Default = 'Combuctor' --Addon.IsRetail and 'Bagnonium' or 'Combuctor
 Addon.Skins:Register {
 	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = 6, closeY = 7, margin = 2,
 	load = function(skin)
-		--skin.PortraitFrame:SetTexture('Interface/Addons/Bagnonium/art/small-portrait')
-		skin.PortraitFrame:SetParent(skin:GetParent().OwnerSelector)
+		if skin.PortraitFrame then
+			--skin.PortraitFrame:SetTexture('Interface/Addons/Bagnonium/art/small-portrait')
+			skin.PortraitFrame:SetParent(skin:GetParent().OwnerSelector)
+		end
+		
 		skin.RightBox.Bg:SetBorderColor(NORMAL_FONT_COLOR:GetRGB())
 		skin.LeftBox.Bg:SetBorderColor(0.447,0.767,0.193)
 		skin.CloseButton:Hide()
