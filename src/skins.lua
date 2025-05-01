@@ -20,15 +20,13 @@ Addon.Skins:Register {
 
 	layout = function(skin)
 		local frame = skin:GetParent()
-		local money = max(frame.MoneyFrame:GetWidth(), 125)
-		local currency = frame.CurrencyTracker:GetWidth()
-
 		frame.BrokerCarrousel:SetPoint('LEFT', skin.LeftBox, 'RIGHT', 2,-1)
 		frame.BrokerCarrousel:SetPoint('RIGHT', skin.RightBox, 'LEFT', -2,-1)
-		
-		skin.LeftBox:SetWidth(currency > 5 and max(currency+15, 130) or 1)
+
+		local currency = frame.CurrencyTracker:GetWidth()
+		skin.RightBox:SetWidth(max(frame.MoneyFrame:GetWidth(), 125)+20)
+		skin.LeftBox:SetWidth(currency > 5 and currency+8 or 1)
 		skin.LeftBox:SetShown(currency > 5)
-		skin.RightBox:SetWidth(money+20)
 	end
 }
 

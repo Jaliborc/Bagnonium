@@ -1,0 +1,21 @@
+<!--
+	Templates used for the Bagnonium skins.
+	All Rights Reserved
+-->
+
+<Ui>
+    <Frame name="CombuctorSkinTemplate" inherits="ButtonFrameTemplate" virtual="true">
+		<Frames>
+			<Button parentKey="RightBox" inherits="CombuctorBoxTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-6" y="4"/>
+				</Anchors>
+			</Button>
+			<Button parentKey="LeftBox" inherits="CombuctorBoxTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT" x="4" y="4"/>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

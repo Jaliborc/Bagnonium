@@ -9,23 +9,17 @@
 		<Frames>
 			<Button parentKey="Title" inherits="PanelDragBarTemplate">
 				<Size y="14"/>
+				<NormalFont style="GameFontNormalCenter"/>
 				<Anchors>
 					<Anchor point="TOP" x="0" y="-4"/>
 				</Anchors>
-				<NormalFont style="GameFontNormalCenter"/>
 			</Button>
 
-			<EditBox parentKey="SearchBox" autoFocus="false" inherits="SearchBoxTemplate">
-				<Size x="20" y="20"/>
+			<EditBox parentKey="SearchBox" inherits="SearchBoxTemplate">
+				<Size y="20"/>
 				<Anchors>
 					<Anchor point="TOPLEFT" x="70" y="-32"/>
-					<Anchor point="TOPRIGHT" x="-80" y="-32"/>
 				</Anchors>
-				<Scripts>
-					<OnEnterPressed>
-						self:ClearFocus()
-					</OnEnterPressed>
-				</Scripts>
 			</EditBox>
 
 			<Button parentKey="ResizeButton" inherits="PanelResizeButtonTemplate">
@@ -48,14 +42,14 @@
 				<Texture parentKey="Border" file="Interface\SpellBook\SpellBook-SkillLineTab">
 					<Size x="72" y="72"/>
 					<Anchors>
-						<Anchor point="TOPRIGHT" x="3" y="12"/>
+						<Anchor point="TOP" x="14" y="12"/>
 					</Anchors>
 				</Texture>
 			</Layer>
 		</Layers>
 	</CheckButton>
 
-	<Button name="BagnoniumRoundTemplate" virtual="true">
+	<Button name="BagnoniumRoundTemplate" registerForClicks="anyUp" virtual="true">
 		<Size x="28" y="28"/>
 		<HighlightTexture file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" alphaMode="ADD">
 			<TexCoords left="0.0625" right="0.9375" top="0.0625" bottom="0.9375"/>
@@ -103,10 +97,11 @@
 	<Button name="BagnoniumBagToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="icon" value="Interface/Buttons/Button-Backpack-Up" type="string"/>
+			<KeyValue key="off" value="5" type="number"/>
 		</KeyValues>
 	</Button>
 
-	<!-- Skins -->
+	<!-- Skinning -->
 	<Frame name="BagnoniumNineSlice" inherits="NineSliceCodeTemplate" setAllPoints="true" virtual="true">
 		<Scripts>
 			<OnLoad>
@@ -139,32 +134,5 @@
 				self.Center:SetVertTile(self.tile)
 			</OnLoad>
 		</Scripts>
-	</Frame>
-
-	<Frame name="CombuctorBoxTemplate" inherits="MagicButtonTemplate" virtual="true">
-		<Size x="156" y="22"/>
-		<Frames>
-			<Frame parentKey="Bg" inherits="BagnoniumNineSlice">
-				<KeyValues>
-					<KeyValue key="file" value="Interface/Addons/Bagnonium/art/classic-money" type="string"/>
-					<KeyValue key="size" value="256,32,7" type="string"/>
-				</KeyValues>
-			</Frame>
-		</Frames>
-	</Frame>
-
-	<Frame name="CombuctorSkinTemplate" inherits="ButtonFrameTemplate" virtual="true">
-		<Frames>
-			<Button parentKey="RightBox" inherits="CombuctorBoxTemplate">
-				<Anchors>
-					<Anchor point="BOTTOMRIGHT"/>
-				</Anchors>
-			</Button>
-			<Button parentKey="LeftBox" inherits="CombuctorBoxTemplate">
-				<Anchors>
-					<Anchor point="BOTTOMLEFT"/>
-				</Anchors>
-			</Button>
-		</Frames>
 	</Frame>
 </Ui>

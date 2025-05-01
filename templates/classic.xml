@@ -12,7 +12,7 @@
 		</KeyValues>
 	</Button>
 
-    <CheckButton name="BagnoniumSortButtonTemplate" virtual="true">
+    <CheckButton name="BagnoniumSortButtonTemplate" registerForClicks="anyUp" virtual="true">
 		<Size x="28" y="26"/>
 		<NormalTexture atlas="bags-button-autosort-up"/>
 		<PushedTexture atlas="bags-button-autosort-down"/>
@@ -29,4 +29,16 @@
 			</Anchors>
 		</CheckedTexture>
 	</CheckButton>
+
+	<Frame name="CombuctorBoxTemplate" inherits="MagicButtonTemplate" virtual="true">
+		<Size x="156" y="22"/>
+		<Frames>
+			<Frame parentKey="Bg" inherits="BagnoniumNineSlice">
+				<KeyValues>
+					<KeyValue key="file" value="Interface/Addons/Bagnonium/art/classic-money" type="string"/>
+					<KeyValue key="size" value="256,32,7" type="string"/>
+				</KeyValues>
+			</Frame>
+		</Frames>
+	</Frame>
 </Ui>

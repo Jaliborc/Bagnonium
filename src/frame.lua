@@ -36,11 +36,11 @@ function Frame:New(params)
 	end
 
 	f:SetSize(f.profile.width, f.profile.height)
+	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8,2)
 	f:GetWidget('ItemGroup', f.Bags)
-	f:GetWidget('CurrencyTracker')
 	f:GetWidget('BrokerCarrousel')
 
 	return f
@@ -77,12 +77,6 @@ function Frame:UpdateItems()
 end
 
 function Frame:Layout()
-	local x = 5
-	for i, button in ipairs_reverse(self:GetExtraButtons()) do
-		button:SetPoint('LEFT', self.SortButton, 'RIGHT', x,0)
-		x = x + button:GetWidth() + 5
-	end
-
 	if self:ToggleWidget('BagGroup', self:AreBagsShown()) then
 		self.BagGroup:SetPoint('TOPLEFT', 12, -66)
 	end
@@ -92,14 +86,22 @@ function Frame:Layout()
 			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-30)
 
 			for i, tab in pairs(self.TabGroup.buttons) do
+				tab.Border:SetPoint('TOP', -15,12)
 				tab.Border:SetTexCoord(1, 0, 0, 1)
 			end
 		else
-			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-30)
+			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-10)
 		end
 	end
 
+	local x = 0
+	for i, button in ipairs_reverse(self:GetExtraButtons()) do
+		x = x + button:GetWidth() + (button.off or 0)
+		button:SetPoint('LEFT', self.SortButton, x,0)
+	end
+
 	self.ItemGroup:SetPoint('TOPLEFT', 12, self:AreBagsShown() and -102 or -66)
+	self.SearchBox:SetPoint('TOPRIGHT', -x-47, -32)
 	self:SendFrameSignal('LAYOUT_FINISHED')
 end
 

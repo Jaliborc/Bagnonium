@@ -13,4 +13,5 @@
 
 templates\shared.xml
 templates\retail.xml
+templates\skins.xml
 src\main.xml

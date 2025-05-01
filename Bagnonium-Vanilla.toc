@@ -12,4 +12,5 @@
 
 templates\shared.xml
 templates\classic.xml
+templates\skins.xml
 src\main.xml
