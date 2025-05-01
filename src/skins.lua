@@ -5,12 +5,11 @@
 
 local ADDON, Addon = ...
 
-Addon.Skins.Default = 'Combuctor' --Addon.IsRetail and 'Bagnonium' or 'Combuctor'
+Addon.Skins.Default = 'Combuctor'
 Addon.Skins:Register {
-	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = 6, closeY = 7, margin = 2,
+	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
 	load = function(skin)
 		if skin.PortraitFrame then
-			skin.PortraitFrame:SetTexture('Interface/Addons/Bagnonium/art/small-portrait')
 			skin.PortraitFrame:SetParent(skin:GetParent().OwnerSelector)
 		end
 
@@ -26,10 +25,16 @@ Addon.Skins:Register {
 
 		frame.BrokerCarrousel:SetPoint('LEFT', skin.LeftBox, 'RIGHT', 2,-1)
 		frame.BrokerCarrousel:SetPoint('RIGHT', skin.RightBox, 'LEFT', -2,-1)
-		frame.MoneyFrame:SetWidth(money)
-
-		skin.LeftBox:SetWidth(currency > 5 and max(currency+5, 130) or 1)
+		
+		skin.LeftBox:SetWidth(currency > 5 and max(currency+15, 130) or 1)
 		skin.LeftBox:SetShown(currency > 5)
-		skin.RightBox:SetWidth(money+5)
+		skin.RightBox:SetWidth(money+20)
 	end
 }
+
+if Addon.IsRetail then
+	Addon.Skins:Register {
+		id = 'Bagnonium', template = 'PortraitFrameFlatTemplate', closeX = 3, closeY = 2,
+		load = function(skin) skin.CloseButton:Hide() end
+	}
+end

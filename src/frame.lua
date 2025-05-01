@@ -18,6 +18,7 @@ function Frame:New(params)
 
 	f.ResizeButton:Init(f, 300, 200)
 	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
+	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
 	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id, true) end)
 	f.SearchBox:HookScript('OnTextChanged', function()
 		local text = f.SearchBox:GetText()
@@ -29,19 +30,18 @@ function Frame:New(params)
 	end)
 
 	f.profile = f:GetBaseProfile()
+	f.onDragStopCallback = function()
+		f:StopMovingOrSizing()
+		f:SavePosition()
+	end
+
 	f:SetSize(f.profile.width, f.profile.height)
-	f:GetWidget('ItemGroup', f.Bags)
-	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8,-2)
+	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
+	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8,2)
+	f:GetWidget('ItemGroup', f.Bags)
 	f:GetWidget('CurrencyTracker')
 	f:GetWidget('BrokerCarrousel')
-
-	if Addon.IsRetail then
-		f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', -10, 11)
-	else
-		-- f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', -11, 12) -- large
-		f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', -11, 8) -- small
-	end
 
 	return f
 end
@@ -88,16 +88,14 @@ function Frame:Layout()
 	end
 
 	if self:ToggleWidget('TabGroup', 54, self.profile.sidebar) then
-		local margin = self.bg.skin.margin or 0
-
 		if self.id == 'inventory' then
-			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 4-margin,-30)
+			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-30)
 
 			for i, tab in pairs(self.TabGroup.buttons) do
 				tab.Border:SetTexCoord(1, 0, 0, 1)
 			end
 		else
-			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', margin,-30)
+			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-30)
 		end
 	end
 

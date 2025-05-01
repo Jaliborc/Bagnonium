@@ -1,0 +1,32 @@
+<!--
+	Templates used for the Bagnonium frame design on retail only.
+	All Rights Reserved
+-->
+
+<Ui>
+	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
+		<Size x="70" y="70"/>
+		<KeyValues>
+			<KeyValue key="size" value="62" type="number"/>
+			<KeyValue key="mask" value="52" type="number"/>
+		</KeyValues>
+	</Button>
+
+    <CheckButton name="BagnoniumSortButtonTemplate" virtual="true">
+		<Size x="28" y="26"/>
+		<NormalTexture atlas="bags-button-autosort-up"/>
+		<PushedTexture atlas="bags-button-autosort-down"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD">
+			<Size x="21" y="19"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</HighlightTexture>
+		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
+			<Size x="21" y="19"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</CheckedTexture>
+	</CheckButton>
+</Ui>

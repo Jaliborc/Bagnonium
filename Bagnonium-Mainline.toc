@@ -11,4 +11,6 @@
 ## Interface: 11502
 ## Version: 10.2.25
 
+templates\shared.xml
+templates\retail.xml
 src\main.xml

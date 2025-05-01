@@ -1,5 +1,5 @@
 <!--
-	Templates used for the Bagnonium frame design.
+	Templates used for the Bagnonium frame design on all game versions.
 	All Rights Reserved
 -->
 
@@ -8,21 +8,11 @@
 	<Frame name="BagnoniumFrameTemplate" virtual="true" movable="true" toplevel="true" enableMouse="true" resizable="true" clampedToScreen="true">
 		<Frames>
 			<Button parentKey="Title" inherits="PanelDragBarTemplate">
-				<Size x="14" y="14"/>
+				<Size y="14"/>
 				<Anchors>
 					<Anchor point="TOP" x="0" y="-4"/>
 				</Anchors>
 				<NormalFont style="GameFontNormalCenter"/>
-			</Button>
-
-			<Button parentKey="ResizeButton" inherits="PanelResizeButtonTemplate">
-				<Size x="20" y="20"/>
-				<Anchors>
-					<Anchor point="BOTTOMRIGHT" x="-5" y="2"/>
-				</Anchors>
-				<NormalTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Up">
-					<Color r="1" g="0.82" b="0" a="0.8"/>
-				</NormalTexture>
 			</Button>
 
 			<EditBox parentKey="SearchBox" autoFocus="false" inherits="SearchBoxTemplate">
@@ -37,6 +27,13 @@
 					</OnEnterPressed>
 				</Scripts>
 			</EditBox>
+
+			<Button parentKey="ResizeButton" inherits="PanelResizeButtonTemplate">
+				<Size x="20" y="20"/>
+				<NormalTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Up">
+					<Color r="1" g="0.82" b="0" a="0.8"/>
+				</NormalTexture>
+			</Button>
 
 			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonNoScripts"/>
 		</Frames>
@@ -103,50 +100,11 @@
 		</Layers>
 	</Button>
 
-	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
-		<!-- values are different between retail/classic and portrait sizes, need to solve -->
-		<!-- <Size x="70" y="70"/> -->
-		<!-- <Size x="46" y="46"/> small -->
-		<Size x="46" y="46"/>
-
-		<!--<KeyValues> retail large
-			<KeyValue key="size" value="62" type="number"/>
-			<KeyValue key="mask" value="52" type="number"/>
-		</KeyValues>-->
-		<!-- <KeyValues> classic large
-			<KeyValue key="size" value="56" type="number"/>
-			<KeyValue key="mask" value="56" type="number"/>
-		</KeyValues> -->
-
-		<KeyValues> classic small
-			<KeyValue key="size" value="36" type="number"/>
-			<KeyValue key="mask" value="36" type="number"/>
-		</KeyValues>
-	</Button>
-
 	<Button name="BagnoniumBagToggleTemplate" inherits="BagnoniumRoundButtonTemplate" virtual="true">
 		<KeyValues>
 			<KeyValue key="icon" value="Interface/Buttons/Button-Backpack-Up" type="string"/>
 		</KeyValues>
 	</Button>
-
-	<CheckButton name="BagnoniumSortButtonTemplate" virtual="true">
-		<Size x="28" y="26"/>
-		<NormalTexture atlas="bags-button-autosort-up"/>
-		<PushedTexture atlas="bags-button-autosort-down"/>
-		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD">
-			<Size x="24" y="23"/>
-			<Anchors>
-				<Anchor point="CENTER"/>
-			</Anchors>
-		</HighlightTexture>
-		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
-			<Size x="24" y="23"/>
-			<Anchors>
-				<Anchor point="CENTER"/>
-			</Anchors>
-		</CheckedTexture>
-	</CheckButton>
 
 	<!-- Skins -->
 	<Frame name="BagnoniumNineSlice" inherits="NineSliceCodeTemplate" setAllPoints="true" virtual="true">
@@ -208,12 +166,5 @@
 				</Anchors>
 			</Button>
 		</Frames>
-	</Frame>
-
-	<Frame name="BagnoniumBigSkinTemplate" inherits="PortraitFrameFlatTemplate" virtual="true"/>
-	<Frame name="BagnoniumSkinTemplate" inherits="PortraitFrameFlatTemplate" virtual="true">
-		<KeyValues>
-			<KeyValue key="layoutType" value="HeldBagLayout" type="string"/>
-		</KeyValues>
 	</Frame>
 </Ui>
