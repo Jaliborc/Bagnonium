@@ -4,6 +4,37 @@
 -->
 
 <Ui>
+	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumPortraitTemplate" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND" textureSubLevel="1">
+				<Texture parentKey="Tabard" file="Interface\GuildFrame\GuildFrame">
+					<Size x="60" y="60"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<TexCoords left="0.63183594" right="0.69238281" top="0.61914063" bottom="0.74023438"/>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="2">
+				<Texture parentKey="Emblem" file="Interface\GuildFrame\GuildEmblemsLG_01">
+					<Size x="56" y="64"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="3">
+				<Texture parentKey="Border" file="Interface\GuildFrame\GuildFrame">
+					<Size x="60" y="59"/>
+					<Anchors>
+						<Anchor point="CENTER" x="-1" y="-0.5"/>
+					</Anchors>
+					<TexCoords left="0.63183594" right="0.69238281" top="0.74414063" bottom="0.86523438"/>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
     <Frame name="CombuctorSkinTemplate" inherits="ButtonFrameTemplate" virtual="true">
 		<Frames>
 			<Button parentKey="RightBox" inherits="CombuctorBoxTemplate">

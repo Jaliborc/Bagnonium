@@ -73,7 +73,9 @@
 				self.Icon:SetTexture(self.icon)
 			</OnLoad>
 			<OnMouseDown>
-				self.Icon:SetSize((self.size or 24) - 2, (self.size or 24) - 2)
+				if self:IsEnabled() then
+					self.Icon:SetSize((self.size or 24) - 2, (self.size or 24) - 2)
+				end
 			</OnMouseDown>
 			<OnMouseUp>
 				self.Icon:SetSize(self.size or 24, self.size or 24)

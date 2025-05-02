@@ -4,7 +4,7 @@
 -->
 
 <Ui>
-	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
+	<Button name="BagnoniumPortraitTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
 		<Size x="70" y="70"/>
 		<KeyValues>
 			<KeyValue key="size" value="62" type="number"/>
@@ -30,7 +30,7 @@
 		</CheckedTexture>
 	</CheckButton>
 
-	<Button name="BagnoniumDepositButtonTemplate" inherits="BagnoniumSortButtonTemplate" virtual="true"/>
+	<Button name="BagnoniumDepositButtonTemplate" inherits="BagnoniumSortButtonTemplate" virtual="true"/> <!-- Temporary, needs own look. -->
 
 	<Frame name="CombuctorBoxTemplate" virtual="true">
 		<Size x="156" y="22"/>

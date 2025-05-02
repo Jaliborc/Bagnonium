@@ -4,7 +4,7 @@
 -->
 
 <Ui>
-	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
+	<Button name="BagnoniumPortraitTemplate" inherits="BagnoniumRoundTemplate" virtual="true">
 		<Size x="70" y="70"/>
 		<KeyValues>
 			<KeyValue key="size" value="56" type="number"/>

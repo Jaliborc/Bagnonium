@@ -5,7 +5,7 @@
 
 local ADDON, Addon = ...
 
-Addon.Skins.Default = 'Combuctor'
+Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
 Addon.Skins:Register {
 	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
 	load = function(skin)
