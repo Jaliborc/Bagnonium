@@ -16,6 +16,12 @@ function Frame:New(params)
 	tinsert(UISpecialFrames, f:GetName())
 	MergeTable(f, params)
 
+	f.profile = f:GetBaseProfile()
+	f.onDragStopCallback = function()
+		f:StopMovingOrSizing()
+		f:SavePosition()
+	end
+
 	f.ResizeButton:Init(f, 300, 200)
 	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
 	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
@@ -29,25 +35,18 @@ function Frame:New(params)
 		end
 	end)
 
-	f.profile = f:GetBaseProfile()
-	f.onDragStopCallback = function()
-		f:StopMovingOrSizing()
-		f:SavePosition()
-	end
-
 	f:SetSize(f.profile.width, f.profile.height)
-	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
+	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8,2)
 	f:GetWidget('ItemGroup', f.Bags)
-	f:GetWidget('BrokerCarrousel')
-
+	
 	return f
 end
 
 function Frame:RegisterEvents()
-	self:RegisterFrameSignal('BAG_FRAME_TOGGLED', 'UpdateItems')
+	self:RegisterFrameSignal('BAG_FRAME_TOGGLED', 'UpdateContent')
 	self:RegisterFrameSignal('OWNER_CHANGED', 'UpdateTitle')
 	self:RegisterSignal('SEARCH_CHANGED', 'UpdateSearch')
 	self:UpdateTitle()
@@ -55,7 +54,7 @@ end
 
 function Frame:OnSizeChanged()
 	self.profile.width, self.profile.height = self:GetSize()
-	self:Delay(0, 'UpdateItems')
+	self:Delay(0, 'UpdateContent')
 end
 
 
@@ -72,7 +71,8 @@ function Frame:UpdateSearch()
 	end
 end
 
-function Frame:UpdateItems()
+function Frame:UpdateContent()
+	self.CurrencyTracker:Layout()
 	self.ItemGroup:Layout()
 end
 
@@ -84,14 +84,14 @@ function Frame:Layout()
 	if self:ToggleWidget('TabGroup', 54, self.profile.sidebar) then
 		if self.id == 'inventory' then
 			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-30)
-
-			for i, tab in pairs(self.TabGroup.buttons) do
-				tab.Border:SetPoint('TOP', -15,12)
-				tab.Border:SetTexCoord(1, 0, 0, 1)
-			end
 		else
 			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-10)
 		end
+	end
+
+	if self:ToggleWidget('BrokerCarrousel', self.profile.broker) then
+		self.BrokerCarrousel:SetPoint('LEFT', self.CurrencyTracker, 'RIGHT', 2,-1)
+		self.BrokerCarrousel:SetPoint('RIGHT', self.MoneyFrame, 'LEFT', -2,-1)
 	end
 
 	local x = 0
