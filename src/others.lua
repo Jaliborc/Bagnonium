@@ -1,12 +1,11 @@
 --[[
-	Combuctor-style dynamic item grid.
+	Component proprieties to implement a Combuctor-style dynamic item grid on a static frame.
 	All Rights Reserved
 --]]
 
 local ADDON, Addon = ...
-local Items = Addon.ItemGroup
 
-function Items:LayoutTraits(breaks)
+function Addon.ItemGroup:LayoutTraits(breaks)
 	local profile = self:GetProfile()
 	local n, b = #self.buttons, #breaks - 1
 	local size = 37 + profile.spacing
@@ -33,4 +32,8 @@ function Items:LayoutTraits(breaks)
 	local columns = floor(w / bestFit + 0.001)
 	local scale = min(bestFit / size)
 	return columns, scale, size
+end
+
+function Addon.CurrencyTracker:MaxWidth()
+	return self.frame:GetWidth() - self.frame.MoneyFrame:GetWidth() - 40
 end
