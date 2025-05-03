@@ -26,14 +26,8 @@ function Frame:New(params)
 	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
 	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
 	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id, true) end)
-	f.SearchBox:HookScript('OnTextChanged', function()
-		local text = f.SearchBox:GetText()
-		if text ~= Addon.search then
-			Addon.search = text
-			Addon.canSearch = true
-			Addon:SendSignal('SEARCH_CHANGED', text)
-		end
-	end)
+	f.SearchBox:HookScript('OnTextChanged', GenerateClosure(f.OnSearchChanged, f))
+	f.Title:SetFrameLevel(550)
 
 	f:SetSize(f.profile.width, f.profile.height)
 	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
@@ -46,15 +40,24 @@ function Frame:New(params)
 end
 
 function Frame:RegisterEvents()
-	self:RegisterFrameSignal('BAG_FRAME_TOGGLED', 'UpdateContent')
+	self:RegisterFrameSignal('BAG_FRAME_TOGGLED', 'UpdateBags')
 	self:RegisterFrameSignal('OWNER_CHANGED', 'UpdateTitle')
-	self:RegisterSignal('SEARCH_CHANGED', 'UpdateSearch')
 	self:UpdateTitle()
 end
 
 function Frame:OnSizeChanged()
 	self.profile.width, self.profile.height = self:GetSize()
-	self:Delay(0, 'UpdateContent')
+	self:Delay(0, 'UpdateSize')
+end
+
+function Frame:OnSearchChanged()
+	local text = self.SearchBox:GetText():trim()
+	text = text ~= '' and text
+
+	if text ~= self.search then
+		self.search = text
+		self.ItemGroup:Layout()
+	end
 end
 
 
@@ -65,13 +68,12 @@ function Frame:UpdateTitle()
 	self.Title:SetWidth(self.Title:GetTextWidth())
 end
 
-function Frame:UpdateSearch()
-	if Addon.search ~= self.SearchBox:GetText() then
-		self.SearchBox:SetText(Addon.search or '')
-	end
+function Frame:UpdateBags()
+	self.ItemGroup:Layout()
+	self:Layout()
 end
 
-function Frame:UpdateContent()
+function Frame:UpdateSize()
 	self.CurrencyTracker:Layout()
 	self.ItemGroup:Layout()
 end

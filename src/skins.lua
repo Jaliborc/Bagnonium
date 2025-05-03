@@ -36,6 +36,10 @@ Addon.Skins:Register {
 if Addon.IsRetail then
 	Addon.Skins:Register {
 		id = 'Bagnonium', template = 'PortraitFrameFlatTemplate', closeX = 3, closeY = 2,
-		load = function(skin) skin.CloseButton:Hide() end
+		--centerColor = function(skin, ...) skin:SetBackgroundColor(CreateColor(...)) end, PANEL_BACKGROUND_COLOR
+		load = function(skin)
+			skin.Bg:SetFrameLevel(0)
+			skin.CloseButton:Hide()
+		end
 	}
 end
