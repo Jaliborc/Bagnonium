@@ -9,10 +9,13 @@ Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
 Addon.Skins:Register {
 	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
 	load = function(skin)
+		local frame = skin:GetParent()
 		if skin.PortraitFrame then
-			skin.PortraitFrame:SetParent(skin:GetParent().OwnerSelector)
+			skin.PortraitFrame:SetParent(frame.OwnerSelector)
 		end
 
+		skin.RightBox:SetPoint('LEFT', frame.MoneyFrame, -15,0)
+		skin.LeftBox:SetPoint('TOPRIGHT', frame.CurrencyTracker, 8,0)
 		skin.RightBox.Bg:SetBorderColor(NORMAL_FONT_COLOR:GetRGB())
 		skin.LeftBox.Bg:SetBorderColor(0.447,0.767,0.193)
 		skin.CloseButton:Hide()
@@ -20,13 +23,13 @@ Addon.Skins:Register {
 
 	layout = function(skin)
 		local frame = skin:GetParent()
-		frame.BrokerCarrousel:SetPoint('LEFT', skin.LeftBox, 'RIGHT', 2,-1)
-		frame.BrokerCarrousel:SetPoint('RIGHT', skin.RightBox, 'LEFT', -2,-1)
+		local broker = frame.BrokerCarrousel
+		if broker then
+			broker:SetPoint('LEFT', skin.LeftBox, 'RIGHT', 0,-1)
+			broker:SetPoint('RIGHT', skin.RightBox, 'LEFT', -2,-1)
+		end
 
-		local currency = frame.CurrencyTracker:GetWidth()
-		skin.RightBox:SetWidth(max(frame.MoneyFrame:GetWidth(), 125)+20)
-		skin.LeftBox:SetWidth(currency > 5 and currency+8 or 1)
-		skin.LeftBox:SetShown(currency > 5)
+		skin.LeftBox:SetShown(frame.CurrencyTracker:GetWidth() > 5)
 	end
 }
 
