@@ -3,7 +3,8 @@
 	<Include file="..\..\BagBrother\core\core.xml"/>
 	<Include file="..\..\BagBrother\frames\inventory\inventory.xml"/>
 
-	<Script file="skins.lua"/>
 	<Script file="frame.lua"/>
 	<Script file="others.lua"/>
+	<Script file="skins.lua"/>
+	<Script file="defaults.lua"/>
 </Ui>

@@ -36,6 +36,7 @@ Addon.Skins:Register {
 if Addon.IsRetail then
 	Addon.Skins:Register {
 		id = 'Bagnonium', template = 'PortraitFrameFlatTemplate', closeX = 3, closeY = 2,
+		borderColor = function(skin,...) NineSlicePanelMixin.SetBorderColor(skin.NineSlice,...) end,
 		--centerColor = function(skin, ...) skin:SetBackgroundColor(CreateColor(...)) end, PANEL_BACKGROUND_COLOR
 		load = function(skin)
 			skin.Bg:SetFrameLevel(0)
