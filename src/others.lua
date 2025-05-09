@@ -1,5 +1,5 @@
 --[[
-	Component proprieties to implement a Combuctor-style dynamic item grid on a static frame.
+	Component proprieties to implement a Combuctor-style layout, with a dynamic item grid on a static frame.
 	All Rights Reserved
 --]]
 
@@ -32,6 +32,10 @@ function Addon.ItemGroup:LayoutTraits(breaks)
 	local columns = floor(w / bestFit + 0.001)
 	local scale = min(bestFit / size)
 	return columns, scale, size
+end
+
+function Addon.TabGroup:LayoutTraits()
+	return 0,1, 0,15
 end
 
 function Addon.CurrencyTracker:MaxWidth()

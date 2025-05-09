@@ -13,6 +13,7 @@ local FrameDefaults = {
 	sidebar = true, tabs = true, bagToggle = true,
 
 	filters = AsArray({'all', 'reagent', 'consumable', 'armor', 'questitem', 'miscellaneous'}),
+	subfilters = AsArray({'all', 'normal', 'trade'}),
 	brokerObject = ADDON .. 'Launcher',
 	skin = 'Combuctor',
 	

@@ -83,12 +83,16 @@ function Frame:Layout()
 		self.BagGroup:SetPoint('TOPLEFT', 12, -66)
 	end
 
-	if self:ToggleWidget('TabGroup', 54, self.profile.sidebar) then
+	if self:ToggleWidget('TabGroup', self.profile.sidebar) then
 		if self.id == 'inventory' then
-			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-30)
+			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-64)
 		else
-			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-10)
+			self.TabGroup:SetPoint('TOPLEFT', self, 'TOPRIGHT', 2,-44)
 		end
+	end
+
+	if self:ToggleWidget('BottomTabGroup', self.profile.tabs) then
+		self.BottomTabGroup:SetPoint('TOPLEFT', self, 'BOTTOMLEFT', 11,2)
 	end
 
 	if self:ToggleWidget('BrokerCarrousel', self.profile.broker) then
