@@ -16,6 +16,7 @@ function Frame:New(params)
 	tinsert(UISpecialFrames, f:GetName())
 	MergeTable(f, params)
 
+	f.rules = {}
 	f.profile = f:GetBaseProfile()
 	f.onDragStopCallback = function()
 		f:StopMovingOrSizing()
@@ -83,7 +84,7 @@ function Frame:Layout()
 		self.BagGroup:SetPoint('TOPLEFT', 12, -66)
 	end
 
-	if self:ToggleWidget('TabGroup', self.profile.sidebar) then
+	if self:ToggleWidget('TabGroup', 'sidebar', self.profile.sidebar) then
 		if self.id == 'inventory' then
 			self.TabGroup:SetPoint('TOPRIGHT', self, 'TOPLEFT', 2,-64)
 		else
@@ -91,7 +92,7 @@ function Frame:Layout()
 		end
 	end
 
-	if self:ToggleWidget('BottomTabGroup', self.profile.tabs) then
+	if self:ToggleWidget('BottomTabGroup', 'tabs', self.profile.tabs) then
 		self.BottomTabGroup:SetPoint('TOPLEFT', self, 'BOTTOMLEFT', 11,2)
 	end
 

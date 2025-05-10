@@ -12,10 +12,11 @@ local FrameDefaults = {
 	enabled = true,
 	sidebar = true, tabs = true, bagToggle = true,
 
-	filters = AsArray({'all', 'reagent', 'consumable', 'armor', 'questitem', 'miscellaneous'}),
-	subfilters = AsArray({'all', 'normal', 'trade'}),
-	brokerObject = ADDON .. 'Launcher',
 	skin = 'Combuctor',
+	brokerObject = ADDON .. 'Launcher',
+	rules = {
+		sidebar = AsArray({'all', 'tradegoods', 'consumable', 'armor', 'questitem', 'miscellaneous'}),
+		tabs = AsArray({'all'})},
 	
 	strata = 'HIGH', alpha = 1, scale = 1,
 	point = 'TOPLEFT',
@@ -34,12 +35,14 @@ Addon.Settings.ProfileDefaults = {
 		point = 'BOTTOMRIGHT',
 		x = -13, y = 104,
 
+		rules = {tabs = AsArray({'all', 'normal', 'trade'})},
 		skin = Addon.Skins.Default,
 		currency = true,
 	}, FrameDefaults),
 
 	bank = Addon:SetDefaults({
 		width = Addon.IsRetail and 927 or 694, height = Addon.IsRetail and 674 or 436,
+		rules = Addon.IsRetail and {tabs = AsArray({'all', 'player', 'account'})},
 		deposit = true, currency = true
 	}, FrameDefaults),
 
