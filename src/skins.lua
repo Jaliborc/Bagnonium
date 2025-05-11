@@ -7,7 +7,9 @@ local ADDON, Addon = ...
 
 Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
 Addon.Skins:Register {
-	id = 'Combuctor', template = 'CombuctorSkinTemplate', closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
+	id = 'Combuctor', template = 'CombuctorSkinTemplate',
+	closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
+
 	load = function(skin)
 		local frame = skin:GetParent()
 		if skin.PortraitFrame then
@@ -24,12 +26,14 @@ Addon.Skins:Register {
 	layout = function(skin)
 		local frame = skin:GetParent()
 		local broker = frame.BrokerCarrousel
-		if broker then
-			broker:SetPoint('LEFT', skin.LeftBox, 'RIGHT', 0,-1)
-			broker:SetPoint('RIGHT', skin.RightBox, 'LEFT', -2,-1)
-		end
+		local hasCurrency = frame.CurrencyTracker:IsShown() and frame.CurrencyTracker:GetWidth() > 5
 
-		skin.LeftBox:SetShown(frame.CurrencyTracker:GetWidth() > 5)
+		if broker then
+			broker:SetPoint('LEFT', skin.LeftBox, hasCurrency and 'RIGHT' or 'LEFT', 0,-1)
+			broker:SetPoint('RIGHT', skin.RightBox, 'LEFT', 0,-1)
+		end
+		
+		skin.LeftBox:SetShown(hasCurrency)
 	end
 }
 

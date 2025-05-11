@@ -95,9 +95,9 @@ function Frame:Layout()
 	if self:ToggleWidget('BottomTabGroup', 'tabs', self.profile.tabs) then
 		self.BottomTabGroup:SetPoint('TOPLEFT', self, 'BOTTOMLEFT', 11,2)
 	end
-
+	
 	if self:ToggleWidget('BrokerCarrousel', self.profile.broker) then
-		self.BrokerCarrousel:SetPoint('LEFT', self.CurrencyTracker, 'RIGHT', 2,-1)
+		self.BrokerCarrousel:SetPoint('LEFT', self.CurrencyTracker, self.profile.currency and 'RIGHT' or 'LEFT', -4,-1)
 		self.BrokerCarrousel:SetPoint('RIGHT', self.MoneyFrame, 'LEFT', -2,-1)
 	end
 
@@ -109,6 +109,7 @@ function Frame:Layout()
 		button:Show()
 	end
 
+	self.CurrencyTracker:SetShown(self.profile.currency)
 	self.ItemGroup:SetPoint('TOPLEFT', 12, self:AreBagsShown() and -102 or -66)
 	self.SearchBox:SetPoint('TOPRIGHT', -x-47, -32)
 	self:SendFrameSignal('LAYOUT_FINISHED')
