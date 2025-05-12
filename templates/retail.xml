@@ -30,7 +30,9 @@
 		</CheckedTexture>
 	</CheckButton>
 
-	<Button name="BagnoniumDepositButtonTemplate" inherits="BagnoniumSortButtonTemplate" virtual="true"/> <!-- Temporary, needs own look. -->
+	<Button name="BagnoniumDepositButtonTemplate" inherits="BagnoniumSortButtonTemplate" virtual="true">
+		<NormalTexture file="Interface\Addons\Bagnonium\Art\Deposit"/>
+	</Button>
 
 	<Frame name="CombuctorBoxTemplate" virtual="true">
 		<Size x="156" y="22"/>

@@ -9,7 +9,7 @@ local Tabs = Addon.TabGroup:NewClass('BottomTabGroup')
 Tabs.Button = Tab
 
 function Tab:SetRule(rule)
-	local active = rule == self:GetParent().active
+	local active = rule == self:GetParent():GetActive()
 	if active then
 		PanelTemplates_SelectTab(self)
 	else
