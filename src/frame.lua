@@ -18,6 +18,7 @@ function Frame:New(params)
 
 	f.rules, f.compiled = {}, {}
 	f.profile = f:GetBaseProfile()
+	f.onDragStartCallback = GenerateClosure(f.CanDrag, f)
 	f.onDragStopCallback = function()
 		f:StopMovingOrSizing()
 		f:SavePosition()
