@@ -42,7 +42,7 @@ Addon.Settings.ProfileDefaults = {
 
 	bank = Addon:SetDefaults({
 		width = Addon.IsRetail and 927 or 694, height = Addon.IsRetail and 674 or 436,
-		rules = Addon.IsRetail and {tabs = AsArray({'all', 'player', 'account'})},
+		rules = {tabs = Addon.IsRetail and AsArray({'all', 'player', 'account'}) or AsArray({'all', 'normal', 'trade'})},
 		deposit = true, currency = true
 	}, FrameDefaults),
 

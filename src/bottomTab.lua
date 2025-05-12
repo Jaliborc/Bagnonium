@@ -4,7 +4,7 @@
 --]]
 
 local ADDON, Addon =  ...
-local Tab = Addon.Tab:NewClass('BottomTab', 'Button', Addon.IsRetail and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
+local Tab = Addon.Tab:NewClass('BottomTab', 'CheckButton', Addon.IsRetail and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
 local Tabs = Addon.TabGroup:NewClass('BottomTabGroup')
 Tabs.Button = Tab
 
