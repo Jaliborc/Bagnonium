@@ -107,6 +107,35 @@
 		</KeyValues>
 	</Button>
 
+	<CheckButton name="BagnoniumSortButtonTemplate" registerForClicks="anyUp" virtual="true">
+		<Size x="28" y="26"/>
+		<NormalTexture atlas="bags-button-autosort-up"/>
+		<PushedTexture atlas="bags-button-autosort-down"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD">
+			<Size x="24" y="23"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</HighlightTexture>
+		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
+			<Size x="24" y="23"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</CheckedTexture>
+		<Scripts>
+			<OnLoad>
+				if Bagnonium.IsRetail then
+					self:GetHighlightTexture():SetSize(21, 19)
+
+					if self.GetCheckedTexture then
+						self:GetCheckedTexture():SetSize(21, 19)
+					end
+				end
+			</OnLoad>
+		</Scripts>
+	</CheckButton>
+
 	<!-- Skinning -->
 	<Frame name="BagnoniumNineSlice" inherits="NineSliceCodeTemplate" setAllPoints="true" virtual="true">
 		<Scripts>

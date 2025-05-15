@@ -12,24 +12,6 @@
 		</KeyValues>
 	</Button>
 
-    <CheckButton name="BagnoniumSortButtonTemplate" registerForClicks="anyUp" virtual="true">
-		<Size x="28" y="26"/>
-		<NormalTexture atlas="bags-button-autosort-up"/>
-		<PushedTexture atlas="bags-button-autosort-down"/>
-		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD">
-			<Size x="24" y="23"/>
-			<Anchors>
-				<Anchor point="CENTER"/>
-			</Anchors>
-		</HighlightTexture>
-		<CheckedTexture file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
-			<Size x="24" y="23"/>
-			<Anchors>
-				<Anchor point="CENTER"/>
-			</Anchors>
-		</CheckedTexture>
-	</CheckButton>
-
 	<Frame name="CombuctorBoxTemplate" inherits="MagicButtonTemplate" virtual="true">
 		<Size x="156" y="22"/>
 		<Frames>

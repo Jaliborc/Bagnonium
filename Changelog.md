@@ -1,6 +1,6 @@
 ### 0 (beta)
-* Initial build.
+* Initial pre-release.
+* Custom artwork by Blackmane, Jaliborc and Maxime Playoust.
 * Some planned features are missing, including:
-  * More built-in filters.
+  * Some basic built-in filters that were present in Combuctor.
   * Void storage support.
-  * Some settings in the Options menus might do nothing. Please let me know if you find such issues.
