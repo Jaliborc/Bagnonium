@@ -12,4 +12,4 @@ It has all the features from Bagnon, plus some extra functionality. It organizes
     
 If you want instead a more minimalitic alternative, try [Bagnon](https://www.curseforge.com/wow/addons/bagnon).
 
-![Preview](https://jaliborc.com/media/addons/large/bagnonium/warband.webp)
+![Preview](https://jaliborc.com/media/addons/large/bagnonium/warband.webp#1)
