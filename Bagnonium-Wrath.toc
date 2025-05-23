@@ -8,8 +8,8 @@
 ## SavedVariables: Bagnonium_Sets
 ## Dependencies: BagBrother
 ## X-Development: True
-## Interface: 30403
-## Version: 0.1 (beta)
+## Interface: 30404
+## Version: 0.2
 
 templates\shared.xml
 templates\classic.xml

@@ -1,3 +1,8 @@
+### 0.2
+* Tagging release.
+* Fixed bug preventing startup of the databroker plugin.
+* Guilds are now also stacked into a scrollable submenu when too many are listed.
+
 ### 0.1 (beta)
 * Fixed bug preventing custom search filters from filtering.
 * Characters from the current server group are now sorted before others by default.

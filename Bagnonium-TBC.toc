@@ -9,7 +9,7 @@
 ## Dependencies: BagBrother
 ## X-Development: True
 ## Interface: 20504
-## Version: 0.1 (beta)
+## Version: 0.2
 
 templates\shared.xml
 templates\classic.xml
