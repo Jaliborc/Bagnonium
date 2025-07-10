@@ -8,7 +8,7 @@
 		<Size x="70" y="70"/>
 		<KeyValues>
 			<KeyValue key="size" value="62" type="number"/>
-			<KeyValue key="mask" value="52" type="number"/>
+			<KeyValue key="mask" value="56" type="number"/>
 		</KeyValues>
 	</Button>
 

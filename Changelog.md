@@ -1,3 +1,15 @@
+### 0.4
+* Fixed issue with item pre-click logic on Mists servers.
+* Fixed issue in the guild bank causing the latest messages in the log to be hidden.
+* Bagnon Config now loads apropriately in Mists of Pandaria servers.
+* The guild bank logs are now scrollable.
+
+### 0.3
+* Now supports Mists of Pandaria servers.
+  * PLease do not submit bugs related to void storage. The blizzard beta servers are acting very weird on the storage, addons or not.
+* Updated chinese localization.
+* Fixed bug in character favoriting system.
+
 ### 0.2
 * Tagging release.
 * Fixed bug preventing startup of the databroker plugin.
