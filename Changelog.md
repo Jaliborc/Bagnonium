@@ -1,3 +1,7 @@
+### 0.5
+* The filters editor help button now directs to a new instructional video (https://youtu.be/sie39ZW8uZo).
+* Hotfixed an issue in blizzard's event code.
+
 ### 0.4
 * Fixed issue with item pre-click logic on Mists servers.
 * Fixed issue in the guild bank causing the latest messages in the log to be hidden.
