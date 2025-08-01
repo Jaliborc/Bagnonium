@@ -1,3 +1,6 @@
+### 0.8
+* Classic, Mists: fixed issue with right-clicking items introduced in the last update.
+
 ### 0.7
 * Retail: Updated for patch 11.2.
 * Retail: You can once again buy bank bag slots within the addon, without being blocked by the game.
