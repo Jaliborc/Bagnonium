@@ -1,3 +1,6 @@
+### 0.9
+* Retail: Now gracefully handles Blizzard having deleted a font from the game.
+
 ### 0.8
 * Classic, Mists: fixed issue with right-clicking items introduced in the last update.
 
