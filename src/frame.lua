@@ -6,7 +6,7 @@
 local ADDON, Addon = ...
 local Frame = Addon.Frame
 Frame.FontH = GameFontHighlightCenter
-Frame.Font = GameFontNormalCenter
+Frame.Font = BagnoniumGameFontNormalCenter
 
 
 --[[ Construct ]]--
