@@ -34,8 +34,8 @@ function Frame:New(params)
 	f:SetSize(f.profile.width, f.profile.height)
 	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
 	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
+	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8, Addon.IsRetail and 8 or 2)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
-	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8,2)
 	f:GetWidget('ItemGroup', f.Bags)
 	
 	return f

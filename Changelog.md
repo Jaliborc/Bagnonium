@@ -1,3 +1,16 @@
+### 0.12
+* Retail: Fixed error message that would appear on startup, introduced by last build (ups).
+* All: Added slash command which can be used to reset the addon settings and clear the cache.
+
+### 0.11
+* Classic: Fixed error that would appear when unlocking the keyring on a character for the first time.
+
+### 0.10
+* All: Now uses the first available filter on login when the "All" tab is disabled.
+* Retail: Bank deposit button now appears and behaves as expected again.
+* Retail: Bank server-side sorting now behaves as expected again.
+* Retail: Money is once again showed correctly within each frame.
+
 ### 0.9
 * Retail: Now gracefully handles Blizzard having deleted a font from the game.
 
