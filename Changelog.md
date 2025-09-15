@@ -1,3 +1,19 @@
+### 0.14
+* All: Client-sorting can now sort in reverse!
+  * Added option for reverse sorting, both for client-sorting and server-sorting (Blizzard hid this option for no clear reason).
+* Fixed issues reported with the new taint-free frame display system:
+  * Mists, Retail: Adressed issue that caused the default blizzard code to lag in specific game interactions.
+  * Classic: The default blizzard bags now scale with the UI scaling setting appropriately.
+
+### 0.13
+* Entirely retooled Bagnonium's internal frame display logic, which required an update since the Dragonflight UI rework. You might some notice some differences:
+  * The system now runs entirely-taint free, potentially making "Action Blocked" errors less likely to occur.
+  * The display events settings now apply to a broader range of NPCs (ex: disabling display at the bank will also disable it at the warbound bank chest).
+  * Fixed issues with disabling display events (ex: inability to not show the inventory at the mailbox if the user choses), which could not be fixed in the old system.
+* Retail: Shift-right click will now fallback to a normal right click when warband bank is not available.
+* Classic: Hotfixed error message introduced last version.
+* Classic: Improved calculation of keyring size.
+
 ### 0.12
 * Retail: Fixed error message that would appear on startup, introduced by last build (ups).
 * All: Added slash command which can be used to reset the addon settings and clear the cache.

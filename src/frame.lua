@@ -27,7 +27,7 @@ function Frame:New(params)
 	f.ResizeButton:Init(f, 300, 200)
 	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
 	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
-	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id, true) end)
+	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id) end)
 	f.SearchBox:HookScript('OnTextChanged', GenerateClosure(f.OnSearchChanged, f))
 	f.Title:SetFrameLevel(550)
 
@@ -49,7 +49,7 @@ end
 
 function Frame:OnSizeChanged()
 	self.profile.width, self.profile.height = self:GetSize()
-	self:Delay(0, 'UpdateSize')
+	self:Delay('UpdateSize')
 end
 
 function Frame:OnSearchChanged()
