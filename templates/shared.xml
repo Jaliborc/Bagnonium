@@ -163,10 +163,9 @@
 					t:SetTexture(self.file)
 					t:SetTexCoord(left/w,right/w, top/h,bottom/h)
 					t:SetSize(right-left, bottom-top)
+					t:SetHorizTile(false)
+					t:SetVertTile(false)
 				end
-
-				self.Center:SetHorizTile(self.tile)
-				self.Center:SetVertTile(self.tile)
 			</OnLoad>
 		</Scripts>
 	</Frame>

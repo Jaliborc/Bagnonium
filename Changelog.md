@@ -1,3 +1,9 @@
+### 0.15
+* All: Fixed texture rendering issues that could appear when tracking a large amount of currencies or having a lot of money.
+* Retail: Right-click behaviour at the bank is no longer changed if the bank frame is disabled.
+* Retail: Fixed layout positioning issues introduced by the last patch.
+* Mists: Updated TOC number.
+
 ### 0.14
 * All: Client-sorting can now sort in reverse!
   * Added option for reverse sorting, both for client-sorting and server-sorting (Blizzard hid this option for no clear reason).
