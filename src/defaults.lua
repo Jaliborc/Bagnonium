@@ -13,7 +13,7 @@ local FrameDefaults = {
 	sidebar = true, tabs = true, bagToggle = true,
 
 	skin = 'Combuctor',
-	brokerObject = ADDON .. 'Launcher',
+	activeRules = {}, brokerObject = ADDON .. 'Launcher',
 	rules = {
 		sidebar = AsArray({'all', 'tradegoods', 'consumable', 'armor', 'questitem', 'miscellaneous'}),
 		tabs = AsArray({'all'})},

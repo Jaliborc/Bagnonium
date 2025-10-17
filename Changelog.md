@@ -1,3 +1,7 @@
+### 0.17
+* All: Selected filters are now remembered between sessions.
+* Retail: Updated TOC to 12.2.5.
+
 ### 0.16
 * All: Modified BagBrother's item storage format, prioritizing future-proofing it for Blizzard changes on retail.
   * This fixes the recent issues with keystone tooltips.
