@@ -1,3 +1,10 @@
+### 0.19
+* All: Minor optization of ruleset code.
+* All: Ensured the default tab will always be "All", until the user selects one for the first time, to avoid confusing existing users.
+
+### 0.18
+* All: Fixed a bug introduced last version preventing item refreshes.
+
 ### 0.17
 * All: Selected filters are now remembered between sessions.
 * Retail: Updated TOC to 12.2.5.
