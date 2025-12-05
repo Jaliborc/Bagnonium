@@ -1,3 +1,6 @@
+### 0.21
+* Retail: Added support for Midnight open beta.
+
 ### 0.20
 * All: Minor improvement to StaleCheck-1.0.
 

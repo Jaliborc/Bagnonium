@@ -7,10 +7,11 @@
 ## Author: Jaliborc & Tuller
 ## Group: BagBrother
 
+## X-Development: True
 ## Dependencies: BagBrother
 ## SavedVariables: Bagnonium_Sets
-## Interface: 110205
-## Version: 0.20
+## Interface: 120000, 110205
+## Version: 0.21
 
 templates\shared.xml
 templates\retail.xml
