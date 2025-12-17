@@ -54,3 +54,7 @@ Addon.Settings.ProfileDefaults = {
 		width = 927, height = 674
 	}, FrameDefaults)
 }
+
+Addon.Settings.GlobalDefaults = {
+	slotBackground = Addon.IsModern and 3 or 2
+}

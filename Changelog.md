@@ -1,3 +1,8 @@
+### 0.22
+* All: Added option to invert looting order in the sort options menu.
+* All: Added unique sound design to the item locking mode.
+* Retail, Bagnonium only: Changed default slot background.
+
 ### 0.21
 * Retail: Added support for Midnight open beta.
 
