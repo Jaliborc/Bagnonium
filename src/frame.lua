@@ -16,7 +16,7 @@ function Frame:New(params)
 	tinsert(UISpecialFrames, f:GetName())
 	MergeTable(f, params)
 
-	f.compiled = {}
+	f.rules = {}
 	f.profile = f:GetBaseProfile()
 	f.onDragStartCallback = GenerateClosure(f.CanDrag, f)
 	f.onDragStopCallback = function()
