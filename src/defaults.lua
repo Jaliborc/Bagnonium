@@ -56,5 +56,5 @@ Addon.Settings.ProfileDefaults = {
 }
 
 Addon.Settings.GlobalDefaults = {
-	slotBackground = Addon.IsModern and 3 or 2
+	slotBackground = Addon.IsRetail and 3 or 2
 }

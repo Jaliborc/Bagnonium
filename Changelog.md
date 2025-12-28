@@ -1,24 +1,34 @@
+### 0.24
+* __Improved Warbank Interaction:__
+  * Using an item from your bags while viewing the Warband Bank tab will now deposit it directly into the Warband Bank.
+  * Added a new protocol API (`Addon_Get/SetBankType`) so addons (e.g., TSM) can detect which bank interface (Player or Warband) is currently active.
+* __Bug Fix:__ Resolved an issue that could cause the rule edit frame to display in an incorrect screen position. _(Thanks to r15ch13)_
+
+### 0.23
+* **Mists:** Visual bugfix.
+
 ### 0.22
-* All: Added option to invert looting order in the sort options menu.
-* All: Added unique sound design to the item locking mode.
-* All: Changed the default number of displayed characters to 10 (which matches essentially how it worked before multi-realm was possible).
-* Retail, Bagnonium only: Changed default slot background.
+* **Sorting Options:**
+  * Added option to invert looting order in the sort options menu.
+  * Added unique sound design to the item locking mode.
+* **Minor Change:** The default number of displayed characters is now 10 (to match how it worked before multi-realm viewing was possible on Retail).
+* **Retail, Bagnonium Exclusive:** Changed default slot background.
 
 ### 0.21
-* Retail: Added support for Midnight open beta.
+* Added support for Midnight open beta.
 
 ### 0.20
-* All: Minor improvement to StaleCheck-1.0.
+* Minor improvement to StaleCheck-1.0.
 
 ### 0.19
-* All: Minor optization of ruleset code.
-* All: Ensured the default tab will always be "All", until the user selects one for the first time, to avoid confusing existing users.
+* Minor optization of ruleset code.
+* Ensured the default tab will always be "All", until the user selects one for the first time, to avoid confusing existing users.
 
 ### 0.18
-* All: Fixed a bug introduced last version preventing item refreshes.
+* Fixed a bug introduced last version preventing item refreshes.
 
 ### 0.17
-* All: Selected filters are now remembered between sessions.
+* **New Feature:** Selected filters are now remembered between sessions.
 * Retail: Updated TOC to 12.2.5.
 
 ### 0.16
