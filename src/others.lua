@@ -11,7 +11,7 @@ function Addon.ItemGroup:LayoutTraits(breaks)
 		local profile = self:GetProfile()
 		local size = 37 + profile.spacing
 
-		local w, h = self:GetFrame():GetSize()
+		local w, h = self.frame:GetSize()
 		h = h - (profile.showBags and 131 or 97)
 		w = w - 23
 

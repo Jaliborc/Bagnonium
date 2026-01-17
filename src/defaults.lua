@@ -43,15 +43,13 @@ Addon.Settings.ProfileDefaults = {
 	bank = Addon:SetDefaults({
 		width = Addon.IsRetail and 927 or 694, height = Addon.IsRetail and 674 or 436,
 		rules = {tabs = Addon.IsRetail and AsArray({'all', 'player', 'account'}) or AsArray({'all', 'normal', 'trade'})},
-		deposit = true, currency = true
+		skin = Addon.IsRetail and 'Smooth' or 'Combuctor',
+		deposit = true, currency = true,
 	}, FrameDefaults),
 
 	guild = Addon:SetDefaults({
+		skin = Addon.IsRetail and 'Speckled' or 'Combuctor',
 		width = 637, height = 448,
-	}, FrameDefaults),
-
-	vault = Addon:SetDefaults({
-		width = 927, height = 674
 	}, FrameDefaults)
 }
 

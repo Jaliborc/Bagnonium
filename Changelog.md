@@ -1,3 +1,24 @@
+### 0.25
+* __Bagnonium Exclusive:__
+  * Created two new skins, _Smooth_ and _Speckled_, which are now used by default on the Bank and Guild Bank frames on retail servers.
+* __Improved Performance:__
+  * Opening a window for the first time each session is now **29% faster**.
+  * Massively improved search engine performance by developing a JIT compiler - search and filters are now **13.51 times faster**! That's a **1351% improvement**!
+* __Tooltips:__
+  * Tooltip currency counts now correctly update during gameplay.
+  * To increase readability, money tooltip now hides copper amounts when dealing with large amounts of gold.
+  * To increase readability, large numbers in tooltip currency counts are now formatted as in the rest of the UI.
+* __Other Improvements:__
+  * You can now search battle pets by name, both online and offline.
+  * The sort options menu now detects and refreshes when the blizzard settings change (these client settings can take time to change, and it was visually confusing to use).
+  * Updated dropdown buttons in Bagnon Options to use the new native implementation. Their appearance will now match the version of the game.
+* __Bug Fixes:__
+  * Fixed the missing "Opening the World Map" button text in auto-display options.
+  * Fixed issue that caused custom search filters to not always exactly match a normal text search, for example when using a keyword like _Soulbound_ or _Warbound_.
+  * Fixed error message that could appear when searching offline characters.
+  * Made workaround to stop bug being caused by a major flaw with CallbackHandler-1.0.
+  * Overall reduced reliance on CallbackHandler-1.0 wherever possible.
+
 ### 0.24
 * __Improved Warbank Interaction:__
   * Using an item from your bags while viewing the Warband Bank tab will now deposit it directly into the Warband Bank.

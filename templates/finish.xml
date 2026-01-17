@@ -4,7 +4,7 @@
 -->
 
 <Ui>
-	<Button name="BagnoniumOwnerSelectorTemplate" inherits="BagnoniumPortraitTemplate" virtual="true">
+	<Button name="BagnoniumOfflineSelectorTemplate" inherits="BagnoniumPortraitTemplate" virtual="true">
 		<Layers>
 			<Layer level="BACKGROUND" textureSubLevel="1">
 				<Texture parentKey="Tabard" file="Interface\GuildFrame\GuildFrame">

@@ -32,7 +32,7 @@ function Frame:New(params)
 	f.Title:SetFrameLevel(550)
 
 	f:SetSize(f.profile.width, f.profile.height)
-	f:GetWidget('OwnerSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
+	f:GetWidget('OfflineSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
 	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8, 2)
@@ -113,7 +113,7 @@ function Frame:Layout()
 	self.CurrencyTracker:SetShown(self.profile.currency)
 	self.ItemGroup:SetPoint('TOPLEFT', 12, self:AreBagsShown() and -102 or -66)
 	self.SearchBox:SetPoint('TOPRIGHT', -x-47, -32)
-	self:SendFrameSignal('LAYOUT_FINISHED')
+	self.skin('layout')
 end
 
 

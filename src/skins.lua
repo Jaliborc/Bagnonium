@@ -4,38 +4,50 @@
 --]]
 
 local ADDON, Addon = ...
+local Backgrounds = tFilter({
+	Combuctor = false,
+	Smooth = 'auctionhouse-background-sell-right',
+	Speckled = 'talents-heroclass-choicepopup-background'
+}, function(v) return not v or C_Texture.GetAtlasInfo(v) end)
 
-Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
-Addon.Skins:Register {
-	id = 'Combuctor', template = 'CombuctorSkinTemplate',
-	closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
+for id, atlas in pairs(Backgrounds) do
+	Addon.Skins:Register {
+		id = id, template = 'CombuctorSkinTemplate',
+		closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
 
-	load = function(skin)
-		local frame = skin:GetParent()
-		if skin.PortraitFrame then
-			skin.PortraitFrame:SetParent(frame.OwnerSelector)
+		load = function(skin)
+			local frame = skin:GetParent()
+			if skin.PortraitFrame then
+				skin.PortraitFrame:SetParent(frame.OfflineSelector)
+			end
+
+			skin.RightBox:SetPoint('LEFT', frame.MoneyFrame, -15,0)
+			skin.LeftBox:SetPoint('TOPRIGHT', frame.CurrencyTracker, 8,0)
+			skin.RightBox.Bg:SetBorderColor(NORMAL_FONT_COLOR:GetRGB())
+			skin.LeftBox.Bg:SetBorderColor(0.447,0.767,0.193)
+			skin.CloseButton:Hide()
+
+			if atlas then
+				skin.Inset.Bg:SetAtlas(atlas)
+				skin.Inset.Bg:SetHorizTile(false)
+				skin.Inset.Bg:SetVertTile(false)
+			end
+		end,
+
+		layout = function(skin)
+			local frame = skin:GetParent()
+			local broker = frame.BrokerCarrousel
+			local hasCurrency = frame.CurrencyTracker:IsShown() and frame.CurrencyTracker:GetWidth() > 5
+
+			if broker then
+				broker:SetPoint('LEFT', skin.LeftBox, hasCurrency and 'RIGHT' or 'LEFT', 0,-1)
+				broker:SetPoint('RIGHT', skin.RightBox, 'LEFT', 0,-1)
+			end
+			
+			skin.LeftBox:SetShown(hasCurrency)
 		end
-
-		skin.RightBox:SetPoint('LEFT', frame.MoneyFrame, -15,0)
-		skin.LeftBox:SetPoint('TOPRIGHT', frame.CurrencyTracker, 8,0)
-		skin.RightBox.Bg:SetBorderColor(NORMAL_FONT_COLOR:GetRGB())
-		skin.LeftBox.Bg:SetBorderColor(0.447,0.767,0.193)
-		skin.CloseButton:Hide()
-	end,
-
-	layout = function(skin)
-		local frame = skin:GetParent()
-		local broker = frame.BrokerCarrousel
-		local hasCurrency = frame.CurrencyTracker:IsShown() and frame.CurrencyTracker:GetWidth() > 5
-
-		if broker then
-			broker:SetPoint('LEFT', skin.LeftBox, hasCurrency and 'RIGHT' or 'LEFT', 0,-1)
-			broker:SetPoint('RIGHT', skin.RightBox, 'LEFT', 0,-1)
-		end
-		
-		skin.LeftBox:SetShown(hasCurrency)
-	end
-}
+	}
+end
 
 if Addon.IsRetail then
 	Addon.Skins:Register {
@@ -48,3 +60,5 @@ if Addon.IsRetail then
 		end
 	}
 end
+
+Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
