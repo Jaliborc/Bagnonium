@@ -1,3 +1,19 @@
+## 12.0.0
+After 25 versions of "early-release", I'm happy to say that I am now confident with the state of the addon and it matches my vision for it. Here are the changes for this release.
+* __Server Support:__
+  * Added support for Burning Crusade Anniversary realms.
+  * Updated TOC numbers for live Midnight realms.
+* __Bag Disabling Improvements:__
+  * The main menu buttons now correctly reflect which bags are enabled in the inventory frame.
+  * Bagnon will no longer disable the "combined bags" setting if the inventory frame is disabled.
+  * Retail - fixed issue displaying blizzard bags through the "Fallback" setting. 
+* __Tooltip Item Counts:__
+  * New Feature: Now tracks items in the mailbox and includes them in tooltip item counts!
+  * Bug Fix: Fixed issue that caused equipped items to be incorrectly shown to be in the bags in tooltip item counts.
+* __Other Changes:__
+  * Shift-Right Clicking an item now inverts where it is stored - if you have player tab selected, deposits on the warband and vice-versa.
+  * If you have characters with duplicated names, now the corresponding server names will be shown.
+
 ### 0.25
 * __Bagnonium Exclusive:__
   * Created two new skins, _Smooth_ and _Speckled_, which are now used by default on the Bank and Guild Bank frames on retail servers.
