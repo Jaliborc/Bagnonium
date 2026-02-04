@@ -1,3 +1,8 @@
+## 12.0.1
+* Community contributions!
+  * Equipment sets are now automatically registered as search filters.  You can also Shift-Click them to equip (by _r15ch13_)
+  * Improved frame positioning logic to account for offset UIParent (by _Aerothal_).
+
 ## 12.0.0
 After 25 versions of "early-release", I'm happy to say that I am now confident with the state of the addon and it matches my vision for it. Here are the changes for this release.
 * __Server Support:__
