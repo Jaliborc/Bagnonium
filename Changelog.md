@@ -1,3 +1,7 @@
+### 12.0.2
+* Created icons for Shift-Left-Click and Shift-Right-Click actions that are now used on tooltips.
+* Fixed potential theoretical issue with nil item searches.
+
 ## 12.0.1
 * Community contributions!
   * Equipment sets are now automatically registered as search filters.  You can also Shift-Click them to equip (by _r15ch13_)

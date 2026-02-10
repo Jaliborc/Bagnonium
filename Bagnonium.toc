@@ -10,7 +10,7 @@
 ## Dependencies: BagBrother
 ## SavedVariables: Bagnonium_Sets
 ## Interface: 120001, 120000, 50501, 40402, 30404, 20505, 11507
-## Version: 12.0.1
+## Version: 12.0.2
 
 templates\shared.xml
 templates\classic.xml
