@@ -37,6 +37,7 @@ function Frame:New(params)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8, 2)
 	f:GetWidget('ItemGroup', f.Bags)
+	f:Update()
 	
 	return f
 end
