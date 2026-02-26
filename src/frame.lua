@@ -24,19 +24,20 @@ function Frame:New(params)
 		f:SavePosition()
 	end
 
-	f.ResizeButton:Init(f, 300, 200)
-	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
-	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
-	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id) end)
-	f.SearchBox:HookScript('OnTextChanged', GenerateClosure(f.OnSearchChanged, f))
-	f.Title:SetFrameLevel(550)
-
 	f:SetSize(f.profile.width, f.profile.height)
 	f:GetWidget('OfflineSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
 	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8, 2)
 	f:GetWidget('ItemGroup', f.Bags)
+
+	f.ResizeButton:Init(f, 300, 200)
+	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
+	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
+	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id) end)
+	f.SearchBox:HookScript('OnTextChanged', function() f:OnSearchChanged() end)
+	f.CurrencyTracker:SetScript('OnSizeChanged', function() f:Delay('UpdateSize') end)
+	f.Title:SetFrameLevel(550)
 	
 	return f
 end

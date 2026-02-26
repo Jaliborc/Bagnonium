@@ -12,7 +12,7 @@ function Addon.ItemGroup:LayoutTraits(breaks)
 		local size = 37 + profile.spacing
 
 		local w, h = self.frame:GetSize()
-		h = h - (profile.showBags and 131 or 97)
+		h = h - (profile.showBags and 131 or 97) - (profile.currency and self.frame.CurrencyTracker:GetHeight() - 22 or 0)
 		w = w - 23
 
 		local r, r2 = h/w, w/h

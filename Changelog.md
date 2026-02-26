@@ -1,3 +1,8 @@
+### 12.0.6
+* __Bagnonium Exclusive:__
+  * Item grid now reacts to the currency list becoming multi-line, and no longer overlaps with it.
+* __Hotfix:__ Currency tracking now works as intended on both retail and classic servers.
+
 ### 12.0.5
 * Fixed issue caused by Blizzard changes that prevented more than 3 currencies from being tracked at a time.
 
