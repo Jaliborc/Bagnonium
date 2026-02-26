@@ -12,7 +12,7 @@
 * Added falllback mechanism to prevent issues in case user somehow disables all side filters in a frame.
 * Fixed situation in which players could disable all side filters.
 
-### 12.0.2node cli 
+### 12.0.2
 * Created icons for Shift-Left-Click and Shift-Right-Click actions that are now used on tooltips.
 * Fixed potential theoretical issue with nil item searches.
 
