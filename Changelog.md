@@ -1,3 +1,6 @@
+### 12.0.5
+* Fixed issue caused by Blizzard changes that prevented more than 3 currencies from being tracked at a time.
+
 ### 12.0.4
 * __Guild Bank:__
   * Fixed issue starting the guild bank introduced last version.
@@ -9,7 +12,7 @@
 * Added falllback mechanism to prevent issues in case user somehow disables all side filters in a frame.
 * Fixed situation in which players could disable all side filters.
 
-### 12.0.2
+### 12.0.2node cli 
 * Created icons for Shift-Left-Click and Shift-Right-Click actions that are now used on tooltips.
 * Fixed potential theoretical issue with nil item searches.
 
