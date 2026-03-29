@@ -1,3 +1,6 @@
+### 12.0.8
+* Hotfix typo in previous build.
+
 ### 12.0.7
 * __Bug Fix:__ Added workarounds to issues created by Blizzard secret value spread on tooltips.
 * __Improvement:__ Characters on account gold tooltip now appear sorted by highest gold amount _(by dfherr)_.
