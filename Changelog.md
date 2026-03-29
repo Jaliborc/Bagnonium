@@ -1,3 +1,7 @@
+### 12.0.7
+* __Bug Fix:__ Added workarounds to issues created by Blizzard secret value spread on tooltips.
+* __Improvement:__ Characters on account gold tooltip now appear sorted by highest gold amount _(by dfherr)_.
+
 ### 12.0.6
 * __Bagnonium Exclusive:__
   * Item grid now reacts to the currency list becoming multi-line, and no longer overlaps with it.
