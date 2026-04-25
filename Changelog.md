@@ -1,3 +1,7 @@
+### 12.0.10
+* Updated TOC numbers.
+* Added check to make sure money is properly sorted for unitialized characters (thanks to _gmlew77t_).
+
 ### 12.0.9
 * Added mechanism to prevent tooltip issue that could appear in unkown circumstances. Apologies for the inconvenience.
 

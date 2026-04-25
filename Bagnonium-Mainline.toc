@@ -10,8 +10,8 @@
 ## X-Development: True
 ## Dependencies: BagBrother
 ## SavedVariables: Bagnonium_Sets
-## Interface: 120001, 120000
-## Version: 12.0.9
+## Interface: 120005
+## Version: 12.0.10
 
 templates\shared.xml
 templates\retail.xml
