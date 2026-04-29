@@ -1,3 +1,8 @@
+### 12.0.11
+* Now should display icons for Erathen and Haranir characters correctly.
+* Updated the content of the Help menu, as some information was becoming outdated and could cause confusion amongst players.
+* Added fix that prevents Blizzard causing secret taint when displaying money on tooltips.
+
 ### 12.0.10
 * Updated TOC numbers.
 * Added check to make sure money is properly sorted for unitialized characters (thanks to _gmlew77t_).
