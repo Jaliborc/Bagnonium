@@ -1,0 +1,11 @@
+<Bindings>
+	<Binding name="BAGNONIUM_TOGGLE" category="Bagnonium">
+		Bagnonium.Frames:Toggle('inventory')
+	</Binding>
+	<Binding name="BAGNONIUM_BANK_TOGGLE" category="Bagnonium">
+		Bagnonium.Frames:Toggle('bank')
+	</Binding>
+	<Binding name="BAGNONIUM_GUILD_TOGGLE" category="Bagnonium">
+		Bagnonium.Frames:Toggle('guild')
+	</Binding>
+</Bindings>

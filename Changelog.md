@@ -1,3 +1,7 @@
+### 12.0.13
+* Now forces the deprecated `Twilight's Blade Insignia` to not be tracked, which is impossible to manually untrack.
+* __Bagnonium Exclusive:__ Now users can set up keybindings for opening the bank and guild bank from anywhere.
+
 ### 12.0.12
 * Updated for WoW patch 12.0.7.
 * Updated TOC for Mists.
