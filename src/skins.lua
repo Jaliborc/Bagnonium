@@ -21,8 +21,8 @@ for id, atlas in pairs(Backgrounds) do
 				skin.PortraitFrame:SetParent(frame.OfflineSelector)
 			end
 
-			skin.RightBox:SetPoint('LEFT', frame.MoneyFrame, -15,0)
-			skin.LeftBox:SetPoint('TOPRIGHT', frame.CurrencyTracker, 8,0)
+			skin.RightBox:SetPoint('LEFT', frame.MoneyFrame, -10,0)
+			skin.LeftBox:SetPoint('TOPRIGHT', frame.CurrencyTracker, 4,0)
 			skin.RightBox.Bg:SetBorderColor(NORMAL_FONT_COLOR:GetRGB())
 			skin.LeftBox.Bg:SetBorderColor(0.447,0.767,0.193)
 			skin.CloseButton:Hide()

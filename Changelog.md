@@ -1,3 +1,7 @@
+### 12.0.14
+* Removed all use of the now unsecure blizzard "MoneyFrame" templates.
+* Reversed minor change which accidentally disabled item counts in TBC.
+
 ### 12.0.13
 * Now forces the deprecated `Twilight's Blade Insignia` to not be tracked, which is impossible to manually untrack.
 * __Bagnonium Exclusive:__ Now users can set up keybindings for opening the bank and guild bank from anywhere.

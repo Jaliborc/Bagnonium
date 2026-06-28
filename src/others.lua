@@ -42,5 +42,5 @@ function Addon.TabGroup:LayoutTraits()
 end
 
 function Addon.CurrencyTracker:MaxWidth()
-	return self.frame:GetWidth() - self.frame.MoneyFrame:GetWidth() - 40
+	return self.frame:GetWidth() - self.frame.MoneyFrame:GetWidth() - 36
 end

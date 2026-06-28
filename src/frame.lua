@@ -28,7 +28,7 @@ function Frame:New(params)
 	f:GetWidget('OfflineSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
 	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
-	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -8, 2)
+	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -16, 2)
 	f:GetWidget('ItemGroup', f.Bags)
 
 	f.ResizeButton:Init(f, 300, 200)
