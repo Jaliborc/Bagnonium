@@ -1,3 +1,9 @@
+### 12.0.15
+* Improved Bagnonium sorting algorithm (co-authored by _lucienve_):
+  * Now prevents sending duplicate requests and server-side transaction drops/failures (which can rate-limit operations).
+  * Identical items are now matched to minimize the number of swaps required to sort.
+  * You can now stop an active sort by clicking the sort button again (especially helpful for long processes like the guild bank).
+
 ### 12.0.14
 * Removed all use of the now unsecure blizzard "MoneyFrame" templates.
 * Reversed minor change which accidentally disabled item counts in TBC.
@@ -9,7 +15,7 @@
 ### 12.0.12
 * Updated for WoW patch 12.0.7.
 * Updated TOC for Mists.
-* Items you send to another of your characters are now immediately be counted on item tooltips (thanks to _Dramacydal_).
+* Items you send to another of your characters are now immediately be counted on item tooltips (co-authored by _Dramacydal_).
 * Removed all references to `SetTooltipMoney`, a problematic Blizzard function that has since been deprecated.
 * Added workaround to unexplained Blizzard issue where the Offline View menu would appear large and with a scrollbar even when unecessary.
 
@@ -20,7 +26,7 @@
 
 ### 12.0.10
 * Updated TOC numbers.
-* Added check to make sure money is properly sorted for unitialized characters (thanks to _gmlew77t_).
+* Added check to make sure money is properly sorted for unitialized characters (by _gmlew77t_).
 
 ### 12.0.9
 * Added mechanism to prevent tooltip issue that could appear in unkown circumstances. Apologies for the inconvenience.
@@ -57,7 +63,7 @@
 
 ## 12.0.1
 * Community contributions!
-  * Equipment sets are now automatically registered as search filters.  You can also Shift-Click them to equip (by _r15ch13_)
+  * Equipment sets are now automatically registered as search filters.  You can also Shift-Click them to equip (co-authored by _r15ch13_)
   * Improved frame positioning logic to account for offset UIParent (by _Aerothal_).
 
 ## 12.0.0
