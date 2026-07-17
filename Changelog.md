@@ -1,3 +1,7 @@
+### 12.0.16
+* Fixed sorting ordering bug that could occur with reverse-sorting enabled.
+* Updated TOC for Burning Crusade.
+
 ### 12.0.15
 * Improved Bagnonium sorting algorithm (co-authored by _lucienve_):
   * Now prevents sending duplicate requests and server-side transaction drops/failures (which can rate-limit operations).
