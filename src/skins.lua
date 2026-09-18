@@ -13,7 +13,7 @@ local Backgrounds = tFilter({
 for id, atlas in pairs(Backgrounds) do
 	Addon.Skins:Register {
 		id = id, template = 'CombuctorSkinTemplate',
-		closeX = Addon.IsRetail and 3 or 6, closeY = Addon.IsRetail and 2 or 7,
+		closeX = Addon.IsMainline and 3 or 6, closeY = Addon.IsMainline and 2 or 7,
 
 		load = function(skin)
 			local frame = skin:GetParent()
@@ -49,7 +49,7 @@ for id, atlas in pairs(Backgrounds) do
 	}
 end
 
-if Addon.IsRetail then
+if Addon.IsMainline then
 	Addon.Skins:Register {
 		id = 'Bagnonium', template = 'PortraitFrameFlatTemplate', closeX = 3, closeY = 2,
 		borderColor = function(skin,...) NineSlicePanelMixin.SetBorderColor(skin.NineSlice,...) end,
@@ -61,4 +61,4 @@ if Addon.IsRetail then
 	}
 end
 
-Addon.Skins.Default = Addon.IsRetail and 'Bagnonium' or 'Combuctor'
+Addon.Skins.Default = Addon.IsMainline and 'Bagnonium' or 'Combuctor'

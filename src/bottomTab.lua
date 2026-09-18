@@ -4,7 +4,7 @@
 --]]
 
 local ADDON, Addon =  ...
-local Tab = Addon.Tab:NewClass('BottomTab', 'CheckButton', Addon.IsRetail and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
+local Tab = Addon.Tab:NewClass('BottomTab', 'CheckButton', Addon.IsMainline and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
 local Tabs = Addon.TabGroup:NewClass('BottomTabGroup')
 Tabs.Button = Tab
 
@@ -16,7 +16,7 @@ function Tab:SetRule(rule)
 		PanelTemplates_DeselectTab(self)
 	end
 
-	if Addon.IsRetail then
+	if Addon.IsMainline then
 		self.LeftHighlight:SetAlpha(active and 0 or 0.4)
 		self.MiddleHighlight:SetAlpha(active and 0 or 0.4)
 		self.RightHighlight:SetAlpha(active and 0 or 0.4)
@@ -33,5 +33,5 @@ function Tab:SetRule(rule)
 end
 
 function Tabs:LayoutTraits()
-	return 1,0, Addon.IsRetail and 5 or -10,0
+	return 1,0, Addon.IsMainline and 5 or -10,0
 end

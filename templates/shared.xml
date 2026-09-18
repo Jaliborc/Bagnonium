@@ -125,7 +125,7 @@
 		</CheckedTexture>
 		<Scripts>
 			<OnLoad>
-				if Bagnonium.IsRetail then
+				if Bagnonium.IsMainline then
 					self:GetHighlightTexture():SetSize(21, 19)
 
 					if self.GetCheckedTexture then

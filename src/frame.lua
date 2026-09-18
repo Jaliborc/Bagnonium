@@ -25,7 +25,7 @@ function Frame:New(params)
 	end
 
 	f:SetSize(f.profile.width, f.profile.height)
-	f:GetWidget('OfflineSelector'):SetPoint('TOPLEFT', Addon.IsRetail and -9 or -11, Addon.IsRetail and 13 or 12)
+	f:GetWidget('OfflineSelector'):SetPoint('TOPLEFT', Addon.IsMainline and -9 or -11, Addon.IsMainline and 13 or 12)
 	f:GetWidget('CurrencyTracker', 'NumberFontNormalSmall'):SetPoint('BOTTOMLEFT', 10,4)
 	f:GetWidget('SortButton'):SetPoint('LEFT', f.SearchBox, 'RIGHT', 8, -1)
 	f:GetWidget('MoneyFrame'):SetPoint('BOTTOMRIGHT', -16, 2)
@@ -33,7 +33,7 @@ function Frame:New(params)
 
 	f.ResizeButton:Init(f, 300, 200)
 	f.ResizeButton:SetFrameLevel(f:GetFrameLevel() + 5)
-	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsRetail and -2 or -5,2)
+	f.ResizeButton:SetPoint('BOTTOMRIGHT', Addon.IsMainline and -2 or -5,2)
 	f.CloseButton:SetScript('OnClick', function() Addon.Frames:Hide(f.id) end)
 	f.SearchBox:HookScript('OnTextChanged', function() f:OnSearchChanged() end)
 	f.CurrencyTracker:SetScript('OnSizeChanged', function() f:Delay('UpdateSize') end)

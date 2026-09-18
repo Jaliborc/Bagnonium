@@ -41,18 +41,18 @@ Addon.Settings.ProfileDefaults = {
 	}, FrameDefaults),
 
 	bank = Addon:SetDefaults({
-		width = Addon.IsRetail and 927 or 694, height = Addon.IsRetail and 674 or 436,
+		width = Addon.IsMainline and 927 or 694, height = Addon.IsMainline and 674 or 436,
 		rules = {tabs = Addon.IsRetail and AsArray({'all', 'player', 'account'}) or AsArray({'all', 'normal', 'trade'})},
-		skin = Addon.IsRetail and 'Smooth' or 'Combuctor',
+		skin = Addon.IsMainline and 'Smooth' or 'Combuctor',
 		deposit = true, currency = true,
 	}, FrameDefaults),
 
 	guild = Addon:SetDefaults({
-		skin = Addon.IsRetail and 'Speckled' or 'Combuctor',
+		skin = Addon.IsMainline and 'Speckled' or 'Combuctor',
 		width = 637, height = 448,
 	}, FrameDefaults)
 }
 
 Addon.Settings.GlobalDefaults = {
-	slotBackground = Addon.IsRetail and 3 or 2
+	slotBackground = Addon.IsMainline and 3 or 2
 }
