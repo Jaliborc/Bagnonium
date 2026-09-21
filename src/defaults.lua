@@ -10,7 +10,7 @@ end
 
 local FrameDefaults = {
 	enabled = true,
-	sidebar = true, tabs = true, bagToggle = true,
+	sidebar = true, tabs = true, bagToggle = true, serverSort = Addon.IsClassic,
 
 	skin = 'Combuctor',
 	activeRules = {}, brokerObject = ADDON .. 'Launcher',
