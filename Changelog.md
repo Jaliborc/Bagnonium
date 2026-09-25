@@ -1,3 +1,10 @@
+### 12.1.4
+* __Forever:__ 
+  * Client-side sorting is now compatible.
+  * Leather bags are now always apropriately colored (blizzard created a new type ID, not sure the reason why).
+* Added new preventive measures for combat lock, which have shown measurable differences.
+* Further fixed minor visual issues that could occur during item search.
+
 ### 12.1.3
 * __Design improvement:__ when searching for items, all extraneous information about items that have been filtered out is hidden (such as rarity glow), for clearer results. 
 * __Forever:__ client-sorting is not ready yet, so server sort is enabled by default on these servers.
