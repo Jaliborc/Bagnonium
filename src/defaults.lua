@@ -22,8 +22,8 @@ local FrameDefaults = {
 	point = 'TOPLEFT',
 	x = 15, y = -115,
 
-	bagBreak = 1, breakSpace = 1.3, spacing = 2,
-	itemScale = 1.25,
+	bagBreak = Addon.IsModern and 1 or 0,
+	breakSpace = 1.3, spacing = 2, itemScale = 1.25,
 
 	color = {PANEL_BACKGROUND_COLOR:GetRGBA()},
 	borderColor = {1, 1, 1, 1},
