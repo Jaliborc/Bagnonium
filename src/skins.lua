@@ -4,11 +4,12 @@
 --]]
 
 local ADDON, Addon = ...
+local C = LibStub('C_Everywhere')
 local Backgrounds = tFilter({
 	Combuctor = false,
 	Smooth = 'auctionhouse-background-sell-right',
 	Speckled = 'talents-heroclass-choicepopup-background'
-}, function(v) return not v or C_Texture.GetAtlasInfo(v) end)
+}, function(v) return not v or C.Texture.GetAtlasInfo(v) end)
 
 for id, atlas in pairs(Backgrounds) do
 	Addon.Skins:Register {
