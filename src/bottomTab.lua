@@ -4,7 +4,8 @@
 --]]
 
 local ADDON, Addon =  ...
-local Tab = Addon.Tab:NewClass('BottomTab', 'CheckButton', Addon.IsMainline and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
+local isModernUI = Addon.IsMainline or (WOW_PROJECT_FOREVER and WOW_PROJECT_ID == WOW_PROJECT_FOREVER) or (EditModeManagerFrame ~= nil)
+local Tab = Addon.Tab:NewClass('BottomTab', 'CheckButton', isModernUI and 'PanelTabButtonTemplate' or 'CharacterFrameTabButtonTemplate', true)
 local Tabs = Addon.TabGroup:NewClass('BottomTabGroup')
 Tabs.Button = Tab
 
@@ -16,7 +17,7 @@ function Tab:SetRule(rule)
 		PanelTemplates_DeselectTab(self)
 	end
 
-	if Addon.IsMainline then
+	if isModernUI then
 		self.LeftHighlight:SetAlpha(active and 0 or 0.4)
 		self.MiddleHighlight:SetAlpha(active and 0 or 0.4)
 		self.RightHighlight:SetAlpha(active and 0 or 0.4)
