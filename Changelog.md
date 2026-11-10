@@ -1,5 +1,10 @@
+### 12.1.9
+* __Forever__: Now inventory can be open from the gamepad radial menu.
+* __Forever__ and __Classic__: Now "Soul Shards" rule also shows soul shards outside of soul shard bags.
+* __Forever__: Option for changing reagent slot color now appears correctly.
+
 ### 12.1.8
-* **Forever**: Servers are falsely indicating there is a warband bank. Addon now ignores it on Forever and only shows personal bank bags.
+* Forever: Servers are falsely indicating there is a warband bank. Addon now ignores it on Forever and only shows personal bank bags.
 
 ### 12.1.7
 * Did an overall pass on tuning skins for each version of the game, in particular making versions for Forever.
