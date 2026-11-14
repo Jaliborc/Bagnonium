@@ -1,3 +1,6 @@
+### 12.1.10
+* __All__: Improved accuracy of item counts on recipe tooltips (by _Dramacydal_).
+
 ### 12.1.9
 * __Forever__: Now inventory can be open from the gamepad radial menu.
 * __Forever__ and __Classic__: Now "Soul Shards" rule also shows soul shards outside of soul shard bags.
